@@ -16,9 +16,9 @@
   <nav>
     <!--Start of header_labels-->
     <div class = "global_nav">
-    <ul style="list-style-type:none;" class = "header_labels"> <!--Might have to change this class name when we get to CSS-->
-      <li style="float:center"> <img id="logo" src="images/TCGplayer-logo.png" alt="Store logo" style="margin-left: 400px; width:140px; height:80px;"> </li>
-      <li style="float:right"> <a href="UserProfile.html"> <img src="images/user-icon.png" alt="User Profile" style="margin-top: 0px; width:40px; height:40px;"></a> </li>
+    <ul class = "header_labels"> <!--Might have to change this class name when we get to CSS-->
+      <li style="float:center"> <img id="logo" src="images/TCGplayer-logo.png" alt="Store logo" style="margin-left: 600px; width:140px; height:80px;"> </li>
+      <li style="float:right"> <a href="UserProfile.html"> <img src="images/user-icon.png" alt="User Profile" style="width:50px; height:50px;"></a> </li>
     </ul>
     </div>
     <!--End header_labels--> 

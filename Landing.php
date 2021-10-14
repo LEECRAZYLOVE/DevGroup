@@ -27,18 +27,23 @@
 <!--End of the global navigation section-->
 
 <main>
-    <h1 style="color:lightcyan; margin-left: 10px"><b>Featured</b></h1>
+    <h1 style="color:black; margin-top: 20px; text-align: center; margin-right: 500px; margin-left: 500px; background-color: darkcyan"><b>Featured</b></h1>
 
 <!--Start of Categories section to showcase what cards are featured in the store-->
 <section class="allCategories">
 
 <h2>Magic</h2>
 <ul class="tcgCards_category"> <!-- Magic -->
-    <li><img class="tcgCards_image" src="images\categories\magic\card1.jpg" style="width:200px; height:250px;"></li>
-    <li><img class="tcgCards_image" src="images\categories\magic\card2.jpg" style="width:200px; height:250px;"></li>  
-    <li><img class="tcgCards_image" src="images\categories\magic\card3.jpg" style="width:200px; height:250px;"></li>  
-    <li><img class="tcgCards_image" src="images\categories\magic\card4.jpg" style="width:200px; height:250px;"></li>  
-    <li><img class="tcgCards_image" src="images\categories\yu-gi-oh!\card5.jpg" style="width:200px; height:250px;"></li>
+    <li><img class="tcgCards_image1" src="images\categories\magic\card1.jpg" style="width:200px; height:250px;"></li>
+    <li><img class="tcgCards_image2" src="images\categories\magic\card2.jpg" style="width:200px; height:250px;"></li>  
+    <li><img class="tcgCards_image3" src="images\categories\magic\card3.jpg" style="width:200px; height:250px;"></li>  
+    <li><img class="tcgCards_image4" src="images\categories\magic\card4.jpg" style="width:200px; height:250px;"></li>  
+    <li><img class="tcgCards_image5" src="images\categories\magic\card5.jpg" style="width:200px; height:250px;"></li>
+   <!-- <li><img class="tcgCards_image6" src="images\categories\magic\card6.jpg" style="width:200px; height:250px;"></li>
+    <li><img class="tcgCards_image7" src="images\categories\magic\card7.jpg" style="width:200px; height:250px;"></li>
+    <li><img class="tcgCards_image8" src="images\categories\magic\card8.jpg" style="width:200px; height:250px;"></li>
+    <li><img class="tcgCards_image9" src="images\categories\magic\card9.jpg" style="width:200px; height:250px;"></li>
+    <li><img class="tcgCards_image10" src="images\categories\magic\card10.jpg" style="width:200px; height:250px;"></li>-->
 </ul>
 
 <h2>Yu-Gi-Oh!</h2>
@@ -52,100 +57,90 @@
 
 <h2>Pokeman</h2>
 <ul class="tcgCards_category"> <!-- Pokeman -->
-  <li><img class="tcgCards_image" src="images\categories\pokeman\card1.jpg" style="width:200px; height:250px;"></li>
-  <li><img class="tcgCards_image" src="images\categories\pokeman\card2.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image" src="images\categories\pokeman\card3.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image" src="images\categories\pokeman\card4.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image" src="images\categories\pokeman\card5.jpg" style="width:200px; height:250px;"></li>
+  <li><img class="tcgCards_image1" src="images\categories\pokeman\card1.jpg" style="width:200px; height:250px;"></li>
+  <li><img class="tcgCards_image2" src="images\categories\pokeman\card2.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image3" src="images\categories\pokeman\card3.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image4" src="images\categories\pokeman\card4.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image5" src="images\categories\pokeman\card5.jpg" style="width:200px; height:250px;"></li>
 </ul>
 
 <h2>Cardfight</h2>
 <ul class="tcgCards_category"> <!-- Cardfight -->
-  <li><img class="tcgCards_image" src="images\categories\cardfight\card1.jpg" style="width:200px; height:250px;"></li>
-  <li><img class="tcgCards_image" src="images\categories\cardfight\card2.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image" src="images\categories\cardfight\card3.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image" src="images\categories\cardfight\card4.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image" src="images\categories\cardfight\card5.jpg" style="width:200px; height:250px;"></li>
+  <li><img class="tcgCards_image1" src="images\categories\cardfight\card1.jpg" style="width:200px; height:250px;"></li>
+  <li><img class="tcgCards_image2" src="images\categories\cardfight\card2.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image3" src="images\categories\cardfight\card3.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image4" src="images\categories\cardfight\card4.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image5" src="images\categories\cardfight\card5.jpg" style="width:200px; height:250px;"></li>
 </ul>
 
 <h2>Dragon Ball Super</h2>
 <ul class="tcgCards_category"> <!-- Dragon Ball Super -->
-  <li><img class="tcgCards_image" src="images\categories\dragon ball super\card1.jpg" style="width:200px; height:250px;"></li>
-  <li><img class="tcgCards_image" src="images\categories\dragon ball super\card2.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image" src="images\categories\dragon ball super\card3.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image" src="images\categories\dragon ball super\card4.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image" src="images\categories\dragon ball super\card5.jpg" style="width:200px; height:250px;"></li>
+  <li><img class="tcgCards_image1" src="images\categories\dragon ball super\card1.jpg" style="width:200px; height:250px;"></li>
+  <li><img class="tcgCards_image2" src="images\categories\dragon ball super\card2.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image3" src="images\categories\dragon ball super\card3.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image4" src="images\categories\dragon ball super\card4.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image5" src="images\categories\dragon ball super\card5.jpg" style="width:200px; height:250px;"></li>
 </ul>
 
 <h2>Fresh and Blood</h2>
 <ul class="tcgCards_category"> <!-- Fresh and Blood -->
-  <li><img class="tcgCards_image" src="images\categories\fresh and blood\card1.jpg" style="width:200px; height:250px;"></li>
-  <li><img class="tcgCards_image" src="images\categories\fresh and blood\card2.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image" src="images\categories\fresh and blood\card3.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image" src="images\categories\fresh and blood\card4.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image" src="images\categories\fresh and blood\card5.jpg" style="width:200px; height:250px;"></li>
+  <li><img class="tcgCards_image1" src="images\categories\fresh and blood\card1.jpg" style="width:200px; height:250px;"></li>
+  <li><img class="tcgCards_image2" src="images\categories\fresh and blood\card2.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image3" src="images\categories\fresh and blood\card3.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image4" src="images\categories\fresh and blood\card4.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image5" src="images\categories\fresh and blood\card5.jpg" style="width:200px; height:250px;"></li>
 </ul>
 </section>
-<!-- Manual slideshow <div class="w3-center">
-  <div class="w3-section">
-    <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
-    <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
-  </div>
-  <button class="w3-button demo" onclick="currentDiv(1)">1</button> 
-  <button class="w3-button demo" onclick="currentDiv(2)">2</button> 
-  <button class="w3-button demo" onclick="currentDiv(3)">3</button> 
-  <button class="w3-button demo" onclick="currentDiv(4)">4</button> 
-  <button class="w3-button demo" onclick="currentDiv(5)">5</button> 
-</div> -->
 
+<!-- js to make the horizontal scrolling feature-->
 <script>
 var myIndex = 0;
 slideshow();
 
 function slideshow() {
   var i;
-  var x = document.getElementsByClassName("aboutPhoto");
-  var y = document.getElementsByClassName("aboutBio");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-    y[i].style.display = "none";
+  var v = document.getElementsByClassName("tcgCards_image1");
+  var w = document.getElementsByClassName("tcgCards_image2");
+  var x = document.getElementsByClassName("tcgCards_image3");
+  var y = document.getElementsByClassName("tcgCards_image4");
+  var z = document.getElementsByClassName("tcgCards_image5");
+  var a = document.getElementsByClassName("tcgCards_image6");
+  var b = document.getElementsByClassName("tcgCards_image7");
+  var c = document.getElementsByClassName("tcgCards_image8");
+  var d = document.getElementsByClassName("tcgCards_image9");
+  var e = document.getElementsByClassName("tcgCards_image10");
+  
+  for (i = 0; i < 5; i++) {
+    a[i].style.display = "none"; 
+    b[i].style.display = "none"; 
+    c[i].style.display = "none";  
+    d[i].style.display = "none";
+    e[i].style.display = "none";
+    v[i].style.display = "none"; 
+    w[i].style.display = "none"; 
+    x[i].style.display = "none"; 
+    y[i].style.display = "none"; 
+    z[i].style.display = "none"; 
   }
   myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
+  if (myIndex > 10) {myIndex = 1}  
+  v[myIndex-1].style.display = "block"; 
+  w[myIndex-1].style.display = "block";   
   x[myIndex-1].style.display = "block";
   y[myIndex-1].style.display = "block";  
+  z[myIndex-1].style.display = "block";
+  a[myIndex-1].style.display = "block";
+  b[myIndex-1].style.display = "block"; 
+  c[myIndex-1].style.display = "block"; 
+  d[myIndex-1].style.display = "block"; 
+  e[myIndex-1].style.display = "block"; 
   setTimeout(slideshow, 4000); // Change image every 2 seconds
 }
 
-//function plusDivs(n) {        /Manual slideshow
-//  showDivs(slideIndex += n);
-//}
 
-//function currentDiv(n) {     //Manual slideshow
-//  showDivs(slideIndex = n);
-//}
-
-/*var slideIndex = 1;
-showDivs(slideIndex);
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" w3-red", "");
-  }
-  x[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " w3-red";*/
-//}
 </script>
 </section>
-<!--End of About Us Slideshow section-->
+<!--End of categories Slideshow section-->
 
 <!--Start of lowersection-->
 <aside>

@@ -28,21 +28,21 @@
 
 <main>
    <ul class="form">
-     <li> <h1>Sign In</h1> </li>
+      <h1>Sign In</h1>
 <!--Start of log in form section-->      
-     <li> 
+      
        <form id="form" action="LogInQuery.php" method="POST" onsubmit="Clear()"> <!--Should take you to the admin, client or driver's home page-->
         <label for="username">Username:</label><br>
         <input class="textbox" type="username" id="username" name="username" placeholder="janedoe488@gmail.com"></br><br>
-
+    
         <label for="password">Password:</label><br>
         <input class="textbox" type="password" id="password" name="password" placeholder="Password"></br></br>
         
         <input class="button" type="submit" id="submit" value="Log In"><br><br>
        </form>
-     </li>
+     
 <!--End of log in form section-->
-     <li> <a href="SignUp.php">or create new account</a> </li>
+      <a href="SignUp.php">Create new account</a> 
    </ul>
 </main>
 

@@ -27,9 +27,9 @@
 <!--End of the global navigation section-->
 <main>   
   <ul class="form">
-    <li> <h1>Create New Account</h1>
+     <h1>Create New Account</h1>
 <!--Start of sign up form section-->
-    <li> 
+     
         <form id="form" action="AddClientQuery.php" method = "POST" onsubmit="Clear()"> <!--Should take you to the client or driver's home page-->
 
             <label for="firstname">First Name:</label><br>
@@ -60,8 +60,9 @@
             <input class="button" type="submit" id="submit" value="Sign Up">
         
         </form>
-    </li>
+    
 <!--End of sign up form section-->
+        <a href="SignUp.php">Already have an account</a>
   <ul>
 
 <!--To clear the form input after submit button has been clicked-->
@@ -72,6 +73,7 @@ function Clear() {
 </script>
 
 </main>
+
 <!--Just a footer for profesionalism-->
 <footer>
     <p>&copy; 2021 NameOfStore.&nbsp;&nbsp; All Rights Reserved. &nbsp;&nbsp;Proudly created by

@@ -12,7 +12,7 @@
     <!--Start of header_labels-->
     <div class = "global_nav">
     <ul class = "header_labels">
-      <li style="float:center"> <img id="logo" src="/Logo.png" alt="On The Go logo" style="margin-left: 580px; width:140px; height:80px;"> </li>
+      <li style="float:center"> <img id="logo" src="/TCGplayer-logo.png" alt="On The Go logo" style="margin-left: 580px; width:140px; height:80px;"> </li>
       <li style="float:right"> <a href="UserProfile.html"> <img src="icons/User.png" alt="User Profile" style="width:40px; height:40px;"></a> </li>
     </ul>
     </div>

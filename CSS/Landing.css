@@ -1,5 +1,5 @@
 body{
-    background-color: lightgoldenrodyellow;
+    background-color: black;
 }
 
 /*main:after {
@@ -24,26 +24,38 @@ body{
   
   .header_labels li a {
     display: block;
-    color: orange;
     text-align: center;
     padding: 20px 22px;
     text-decoration: none;
-    font-size: xx-large;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-
-  #bookNow {
-      border: 2px solid lightgoldenrodyellow;
-      margin-left: 10px;
   }
   
   .header_labels li a:hover:not(.active) {
-    background-color: lightgoldenrodyellow;
-    color: orange;
+    background-color: lightcyan;
+    color: darkcyan;
   } 
   /*End of global navigation section*/
 
-  /*Start of about styling section*/
+  /*Start of main styling section*/
+  h2 {
+    color: darkcyan;
+    margin-left: 10px;
+  }
+  .tcgCards_category {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    overflow: hidden;
+    background-color: lightcyan;
+    position: sticky;
+    margin-bottom: 20px;
+  }
+
+  .tcgCards_category li {
+    float: left;
+    padding-right: 30px;
+   
+  }
+
   .about article h1 {
       text-align: left;
       color: orange;

@@ -27,29 +27,63 @@
 <!--End of the global navigation section-->
 
 <main>
-    <h1><b>Featured</b></h1>
+    <h1 style="color:lightcyan; margin-left: 10px"><b>Featured</b></h1>
 
-<!--Start of About Us Slideshow section-->
-<section class="uppersection">
-<ul class="aboutUs">
-  <li>  
-    <div class="aboutPhotos">
-        <img class="w3-circle aboutPhoto" src="Icons\Beyonce.jpg" style="width:500px; height:350px;">
-        <img class="w3-circle aboutPhoto" src="Icons\noname.jpg" style="width:500px; height:350px;">
-        <img class="w3-circle aboutPhoto" src="Icons\Lauryn.jpg" style="width:500px; height:350px;">
-        <img class="w3-circle aboutPhoto" src="Icons\Ami.jpg" style="width:500px; height:350px;">
-        <img class="w3-circle aboutPhoto" src="Icons\Kanye.jpg" style="width:500px; height:350px;">
-    </div>
-  </li>
-  <li>
-    <div class="aboutBios">
-        <p class="aboutBio"><b>Litha Stuurman</b><br><br>Rhodes University, BSc Computer Science and Information Systems<br>Systems Programmer and Designer<br>Mantra: "Success = Talent X Effort^2"</p>
-        <p class="aboutBio"><b>Ncebakazi Gxako</b><br><br>Rhodes University, BSc Applied Mathematics and Information Systems<br>Programmer and Tester<br>Mantra: "And we can do all things through Christ who strengthens us"</p>
-        <p class="aboutBio"><b>Sandzisile Nxumalo</b><br><br>Rhodes University, BSc Economics and Information Systems<br>Project Manager and Tester<br>Mantra: "Success = Talent x Effort^2"</p>
-        <p class="aboutBio"><b>Nyasha Munyoro</b><br><br>Rhodes University, BCom Management and Information Systems<br>Systems Analyst and Designer<br>Mantra: "Success = Talent x Effort^2"</p>
-        <p class="aboutBio"><b>Simphiwe Sobici</b><br><br>Rhodes University, BSc Computer Science and Information Systems<br>Systems Programmer and Designer<br>Mantra: "Success = Talent x Effort^2"</p>
-    </div>
-  </li>      
+<!--Start of Categories section to showcase what cards are featured in the store-->
+<section class="allCategories">
+
+<h2>Magic</h2>
+<ul class="tcgCards_category"> <!-- Magic -->
+    <li><img class="tcgCards_image" src="images\categories\magic\card1.jpg" style="width:200px; height:250px;"></li>
+    <li><img class="tcgCards_image" src="images\categories\magic\card2.jpg" style="width:200px; height:250px;"></li>  
+    <li><img class="tcgCards_image" src="images\categories\magic\card3.jpg" style="width:200px; height:250px;"></li>  
+    <li><img class="tcgCards_image" src="images\categories\magic\card4.jpg" style="width:200px; height:250px;"></li>  
+    <li><img class="tcgCards_image" src="images\categories\yu-gi-oh!\card5.jpg" style="width:200px; height:250px;"></li>
+</ul>
+
+<h2>Yu-Gi-Oh!</h2>
+<ul class="tcgCards_category"> <!-- Yu-Gi-Oh! -->
+  <li><img class="tcgCards_image" src="images\categories\yu-gi-oh!\card1.jpg" style="width:200px; height:250px;"></li>
+  <li><img class="tcgCards_image" src="images\categories\yu-gi-oh!\card2.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image" src="images\categories\yu-gi-oh!\card3.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image" src="images\categories\yu-gi-oh!\card4.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image" src="images\categories\yu-gi-oh!\card5.jpg" style="width:200px; height:250px;"></li>
+</ul>
+
+<h2>Pokeman</h2>
+<ul class="tcgCards_category"> <!-- Pokeman -->
+  <li><img class="tcgCards_image" src="images\categories\pokeman\card1.jpg" style="width:200px; height:250px;"></li>
+  <li><img class="tcgCards_image" src="images\categories\pokeman\card2.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image" src="images\categories\pokeman\card3.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image" src="images\categories\pokeman\card4.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image" src="images\categories\pokeman\card5.jpg" style="width:200px; height:250px;"></li>
+</ul>
+
+<h2>Cardfight</h2>
+<ul class="tcgCards_category"> <!-- Cardfight -->
+  <li><img class="tcgCards_image" src="images\categories\cardfight\card1.jpg" style="width:200px; height:250px;"></li>
+  <li><img class="tcgCards_image" src="images\categories\cardfight\card2.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image" src="images\categories\cardfight\card3.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image" src="images\categories\cardfight\card4.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image" src="images\categories\cardfight\card5.jpg" style="width:200px; height:250px;"></li>
+</ul>
+
+<h2>Dragon Ball Super</h2>
+<ul class="tcgCards_category"> <!-- Dragon Ball Super -->
+  <li><img class="tcgCards_image" src="images\categories\dragon ball super\card1.jpg" style="width:200px; height:250px;"></li>
+  <li><img class="tcgCards_image" src="images\categories\dragon ball super\card2.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image" src="images\categories\dragon ball super\card3.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image" src="images\categories\dragon ball super\card4.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image" src="images\categories\dragon ball super\card5.jpg" style="width:200px; height:250px;"></li>
+</ul>
+
+<h2>Fresh and Blood</h2>
+<ul class="tcgCards_category"> <!-- Fresh and Blood -->
+  <li><img class="tcgCards_image" src="images\categories\fresh and blood\card1.jpg" style="width:200px; height:250px;"></li>
+  <li><img class="tcgCards_image" src="images\categories\fresh and blood\card2.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image" src="images\categories\fresh and blood\card3.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image" src="images\categories\fresh and blood\card4.jpg" style="width:200px; height:250px;"></li>  
+  <li><img class="tcgCards_image" src="images\categories\fresh and blood\card5.jpg" style="width:200px; height:250px;"></li>
 </ul>
 </section>
 <!-- Manual slideshow <div class="w3-center">

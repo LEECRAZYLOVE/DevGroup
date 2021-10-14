@@ -172,13 +172,13 @@ function showDivs(n) {
 </main>
 <!--Just a footer for profesionalism-->
 <footer>
-    <p>&copy; 2020 On-The-Go.&nbsp;&nbsp; All Rights Reserved. &nbsp;&nbsp;Proudly created by
-        Trademark
+    <p>&copy; 2021 NameOfStore.&nbsp;&nbsp; All Rights Reserved. &nbsp;&nbsp;Proudly created by
+        NameOfStore
     </p>
     <p>
         <small>Last modified:
-            <time>3 October 2020</time>
+            <time>14 October 2021</time>
         </small>
     </p>
 </footer>
-</html>`    qZ
+</html>

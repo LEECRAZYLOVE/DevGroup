@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Courgette"> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Itim">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="CSS\Landing.css">
-    <title>SignIn</title>   
+    <link rel="stylesheet" href="CSS\Landing.css">   
 </head>
 <body>
 <!--Start of the global navigation section-->
@@ -27,33 +26,7 @@
 <!--End of the global navigation section-->
 
 <main>
-   <ul class="form">
-      <h1>Sign In</h1>
-<!--Start of log in form section-->      
-      
-       <form id="form" action="LogInQuery.php" method="POST" onsubmit="Clear()"> <!--Should take you to the admin, client or driver's home page-->
-        <label for="username">Username:</label><br>
-        <input class="textbox" type="username" id="username" name="username" placeholder="janedoe488@gmail.com"></br><br>
-    
-        <label for="password">Password:</label><br>
-        <input class="textbox" type="password" id="password" name="password" placeholder="Password"></br></br>
-        
-        <input class="button" type="submit" id="submit" value="Log In"><br><br>
-       </form>
-     
-<!--End of log in form section-->
-      <a href="SignUp.php">Create new account</a> 
-   </ul>
 </main>
-
-<!--To clear the form input after submit button has been clicked-->
-<script>
-function Clear() {
-  document.getElementById("form").reset();
-}
-</script>
-
-
 
 <!--Just a footer for profesionalism-->
 <footer>

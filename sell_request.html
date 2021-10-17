@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Itim">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="CSS\Landing.css">
-    <title>SignIn</title>   
+    <title>Sell Request</title>   
 </head>
+
 <body>
+
 <!--Start of the global navigation section-->
 <header>
   <nav>
@@ -26,45 +29,39 @@
 </header>
 <!--End of the global navigation section-->
 
-<main>
-   <ul class="form">
-      <h1>Sign In</h1>
-<!--Start of log in form section-->      
-      
-       <form id="form" action="LogInQuery.php" method="POST" onsubmit="Clear()"> <!--Should take you to the admin, client or driver's home page-->
-        <label for="username">Username:</label><br>
-        <input class="textbox" type="username" id="username" name="username" placeholder="janedoe488@gmail.com"></br><br>
-    
-        <label for="password">Password:</label><br>
-        <input class="textbox" type="password" id="password" name="password" placeholder="Password"></br></br>
-        
-        <input class="button" type="submit" id="submit" value="Log In"><br><br>
-       </form>
-     
-<!--End of log in form section-->
-      <a href="SignUp.php">Create new account</a> 
-   </ul>
-</main>
+    <form action="" method="">
+            
+        Card Name: <br><input class="textbox" type="text" name="name"><br>
+            
+        <label for="category">Category:</label>
+        <br><select name="category" id="cat">
 
-<!--To clear the form input after submit button has been clicked-->
-<script>
-function Clear() {
-  document.getElementById("form").reset();
-}
-</script>
+            <option value="magic">Magic</option>
+            <option value="yu-gi-oh">Yu-Gi-Oh!</option>
+            <option value="pokemon">Pokemon</option>
+            <option value="cardfight">Cardfight</option>
+            <option value="dragonBallSuper">Dragon Ball Super</option>
+            <option value="feleshAndBlood">Flesh and Blood</option>
 
+        </select><br>
+            
+        Condition: <br><input class="textbox" type="" name="condition"><br>
+            
+        Age (Year manufactured): <br><input class="textbox" type="number" min="1900" max="2099" step="1" value="2021" name="age"><br>
+            
+        Description: <br><textarea type="text" name="description" cols="40"></textarea><br>
+            
+        Images: <br><input type="file" id="img" name="image" accept="image/*"><br>
 
+        <br><input class="button" type="submit" value="Submit">
+    </form>
 
-<!--Just a footer for profesionalism-->
+</body>
+
 <footer>
     <p>&copy; 2021 NameOfStore.&nbsp;&nbsp; All Rights Reserved. &nbsp;&nbsp;Proudly created by
         NameOfStore
     </p>
-    <p>
-        <small>Last modified:
-            <time>14 October 2021</time>
-        </small>
-    </p>
 </footer>
-</body>
+
 </html>

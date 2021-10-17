@@ -1,0 +1,48 @@
+body{
+    background-color: black;
+}
+
+/*Start the global navigation styling section*/
+.header_labels {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: darkcyan;
+    position: sticky;
+  }
+  
+  .header_labels li {
+    float: left;
+  }
+  
+  .header_labels li a {
+    display: block;
+    text-align: center;
+    padding: 20px 22px;
+    text-decoration: none;
+  }
+  
+  .header_labels li a:hover:not(.active) {
+    background-color: lightcyan;
+    color: darkcyan;
+  } 
+
+  h1{
+      text-align: center;
+      color: darkcyan;
+  }
+
+ h2{
+   text-align: center;
+   color: darkcyan;
+}
+form{
+    text-align: center;
+    color: darkcyan;
+}
+
+footer{
+    text-align: center;
+    color: darkcyan;
+}

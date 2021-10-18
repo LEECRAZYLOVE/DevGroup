@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+
+    <script>
+        $(function () {
+            $("#card_name").autocomplete({
+                source: "Sell_request_autocomplete.php",
+            });
+        });
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -31,7 +40,7 @@
 
     <form action="" method="">
             
-        Card Name: <br><input class="textbox" type="text" name="name"><br>
+        Card Name: <br><input class="textbox" id="card_name" type="text" name="name"><br>
             
         <label for="category">Category:</label>
         <br><select name="category" id="cat">
@@ -41,7 +50,7 @@
             <option value="pokemon">Pokemon</option>
             <option value="cardfight">Cardfight</option>
             <option value="dragonBallSuper">Dragon Ball Super</option>
-            <option value="feleshAndBlood">Flesh and Blood</option>
+            <option value="fleshAndBlood">Flesh and Blood</option>
 
         </select><br>
             

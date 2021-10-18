@@ -31,7 +31,7 @@
       <h1>Sign In</h1>
 <!--Start of log in form section-->      
       
-       <form id="form" action="LogInQuery.php" method="POST" onsubmit="Clear()"> <!--Should take you to the admin, client or driver's home page-->
+       <form id="form" action="SignInQuery.php" method="POST" onsubmit="Clear()"> <!--Should take you to the admin, client or driver's home page-->
         <label for="username">Username:</label><br>
         <input class="textbox" type="username" id="username" name="username" placeholder="janedoe488@gmail.com"></br><br>
     
@@ -42,7 +42,7 @@
        </form>
      
 <!--End of log in form section-->
-      <a href="SignUp.php">Create new account</a> 
+      <a style="color: white" href="SignUp.php">Create new account</a> 
    </ul>
 </main>
 

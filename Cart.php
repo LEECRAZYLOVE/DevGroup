@@ -95,11 +95,28 @@
     <div class="total-price">$349</div>
   </div>
 
-  <!-- Overall Cart -->
-  <div class="overall">
+  <!-- Overall cart -->
+  <div class="item">
     <div class="buttons">
-      <span class="overall-btn"></span>
-</div>
+      <span class="delete-btn"></span>
+      <span class="like-btn"></span>
+    </div>
+ 
+    <div class="image">
+      <img src="images\collection.jpg" alt=""/>
+    </div>
+ 
+    <div class="description">
+      <span>Maison Margiela</span>
+      <span>Future Sneakers</span>
+      <span>White</span>
+    </div>
+ 
+
+    
+ 
+    <div class="total-price">$870</div>
+  </div>
 
  <!-- CSS Start-->
 
@@ -207,7 +224,8 @@ body {
   margin-right: 50px;
 }
  
-Let’s add some basic style to  product name and description.
+/*Let’s add some basic style to  product name and description.*/
+
 .description {
   padding-top: 10px;
   margin-right: 60px;

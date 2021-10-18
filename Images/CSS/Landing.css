@@ -1,0 +1,203 @@
+body{
+    background-color: black;
+}
+
+/*main:after {
+    content: "";
+    display: table;
+    clear: both;
+  }*/
+
+/*Start the global navigation styling section*/
+.header_labels {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: darkcyan;
+    position: sticky;
+  }
+  
+  .header_labels li {
+    float: left;
+  }
+  
+  .header_labels li a {
+    display: block;
+    text-align: center;
+    padding: 20px 22px;
+    text-decoration: none;
+  }
+  
+  .header_labels li a:hover:not(.active) {
+    background-color: lightcyan;
+    color: darkcyan;
+  } 
+  /*End of global navigation section*/
+
+  /*Start of main styling section*/
+  h2 {
+    color: darkcyan;
+    margin-left: 10px;
+  }
+  .tcgCards_category {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    overflow: hidden;
+    background-color: lightcyan;
+    position: sticky;
+    margin-bottom: 20px;
+  }
+
+  .tcgCards_category li {
+    float: left;
+    padding-right: 30px;
+  }
+
+  .about article h1 {
+      text-align: left;
+      color: orange;
+      font-size: 50px;
+      padding-top: 5px;
+      padding-left: 20px;
+      font-family: Courgette;
+      margin-top: 20px;
+      margin-bottom: 40px;
+  }
+
+  .about article p {
+    text-align: justify;
+    font-size: x-large;
+    color: orange;
+    font-family: Itim;
+    margin-top: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-style: italic;
+  } 
+
+  /*Start of slideshow styling section*/
+  article {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+.uppersection {
+    padding: 10px;
+}
+
+  .aboutUs {
+    list-style-type: none;
+    overflow: hidden;
+    height: 350px;
+    display: block;
+    background-color: orange;
+    text-align: center;
+  }
+
+  .aboutBios {
+    width: 100%;
+    margin-top: 80px;
+  }
+
+  .aboutBios p {
+    font-size: x-large;
+    color: lightgoldenrodyellow;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 5px;
+    text-decoration: underline;
+}
+  .aboutPhotos {
+    float: left;
+    width: 40%;
+  }
+  /*End of slideshow styling section*/
+
+  /*Start of lowersection styling*/
+  .lowersection {
+    list-style-type: none;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+
+  }
+
+  aside {
+    padding: 10px;
+  }
+
+  .form {
+    float: left;
+    margin-left: 5%;
+    padding-bottom: 5%;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 550px;
+  }
+  
+  form {
+    color: orange;
+    font-family: Itim;
+    margin-top: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: large;
+  }
+
+  .textbox {
+    height: 30px;
+    width: 440px;
+    border: 2px solid lightgoldenrodyellow;
+  }
+
+  .button {
+    padding: 10px 32px; 
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: orangered; 
+    color: lightgoldenrodyellow; 
+    border: 2px solid lightgoldenrodyellow;
+  }
+
+  .button:hover {
+    background-color: lightgoldenrodyellow;
+    color: orange;
+  }
+
+  .questions {
+    display: block;
+    text-align: center;
+  }
+
+  .fqas {
+    list-style-type: none;
+    overflow: hidden;
+    display: block;
+    color: orange;
+    font-family: Itim;
+    margin-top: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: large;
+  }
+
+  .lowersection h3 {
+    font-family: Courgette;
+    color: orange;
+    font-size: 50px;
+    margin-top: 20px;
+  }
+
+  /*End of lowersection styling*/
+
+  footer {
+    text-align: center;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+}

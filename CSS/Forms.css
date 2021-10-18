@@ -39,10 +39,29 @@ body{
 }
 form{
     text-align: center;
-    color: darkcyan;
+    color: orange;
+    font-family: Itim;
+    margin-top: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: large;
+}
+
+.button {
+  padding: 10px 32px; 
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: orangered; 
+  color: lightgoldenrodyellow; 
+  border: 2px solid lightgoldenrodyellow;
 }
 
 footer{
-    text-align: center;
-    color: darkcyan;
+  text-align: center;
+  font-size: large;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
 }

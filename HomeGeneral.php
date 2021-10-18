@@ -76,32 +76,28 @@
 
 <div id="myBtnContainer">
   <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn" onclick="filterSelection('categories')"> Categories</button>
-  <button class="btn" onclick="filterSelection('rating')"> Rating</button>
-  <button class="btn" onclick="filterSelection('price')"> Price</button>
-  <button class="btn" onclick="filterSelection('age')"> Age</button>
+  <button class="btn" onclick="filterSelection('magic')"> Magic</button>
+  <button class="btn" onclick="filterSelection('yu-Gi-Oh!')"> Yu-Gi-Oh!</button>
+  <button class="btn" onclick="filterSelection('pokemon')"> Pokemon</button>
+  <button class="btn" onclick="filterSelection('cardfight')"> Cardfight</button>
+  <button class="btn" onclick="filterSelection('dragon Ball Super')"> Dragon Ball Super</button>
+  <button class="btn" onclick="filterSelection('flesh and blood')"> Flesh and Blood</button>
 </div>
 
 <div class="container">
-  <div class="filterDiv categories">Magic</div>
-  <div class="filterDiv price"> Less than R100</div>
-  <div class="filterDiv categories">Yu-Gi-Oh!</div>
-  <div class="filterDiv age">NEW</div>
-  <div class="filterDiv categories">Pokemon</div>
-  <div class="filterDiv age">0-1 Years</div>
-  <div class="filterDiv rating">1</div>
-  <div class="filterDiv rating">2</div>
-  <div class="filterDiv price">R100 - R500</div>
-  <div class="filterDiv price">R500-R1000</div>
-  <div class="filterDiv price">R1000 +</div>
-  <div class="filterDiv rating">3</div>
-  <div class="filterDiv categories">Cardfight</div>
-  <div class="filterDiv categories">Dragon Ball Super</div>
-  <div class="filterDiv categories">Fresh and Blood</div>
-  <div class="filterDiv rating">4</div>
-  <div class="filterDiv rating">5</div>
-  <div class="filterDiv age">1-2 Years</div>
-  <div class="filterDiv age">3 + Years</div>
+  <div class="filterDiv magic pokemon yu-Gi-Oh! cardfight dragon Ball Super flesh and blood">Set name</div>
+  <div class="filterDiv magic pokemon yu-Gi-Oh! cardfight dragon Ball Super flesh and blood">Rarity name</div>
+  <div class="filterDiv pokemon magic yu-Gi-Oh! flesh and blood dragon Ball Super">Card type</div>
+  <div class="filterDiv magic dragon Ball Super">Colour</div>
+  <div class="filterDiv cardfight">Nation</div>
+  <div class="filterDiv cardfight">Grade</div>
+  <div class="filterDiv cardfight">Skill icon</div>
+  <div class="filterDiv flesh and blood">Sub-type</div>
+  <div class="filterDiv flesh and blood">Class</div>
+  <div class="filterDiv dragon Ball Super">Character</div>
+  <div class="filterDiv dragon Ball Super">Era</div>
+  
+
 </div>
 
 <script>

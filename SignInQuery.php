@@ -26,6 +26,7 @@ if ($query = $currentPassword) {
 header("Location:HomeGeneral.php");
 } else {
     echo "Incorrect password username combination";
+    exit();
 }
 
 ?>

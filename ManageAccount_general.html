@@ -66,6 +66,7 @@ Email: <br>
     <label for="bank">Bank:</label>
     <br><select name="Bank" id="bank">
 
+        <option disabled selected value> -- select an option -- </option>
         <option value="absa">Absa</option>
         <option value="capitec">Capitec</option>
         <option value="discovery">Discovery</option>
@@ -83,9 +84,44 @@ Account No.: <br>
 
 <br><input class="button" type="submit" value="Submit" required>
 
-
 </fieldset>
 
+</form>
+
+<form>
+
+<h2>Delivery Address:</h2>
+
+<fieldset>
+
+Street Adress: <br>
+<input class="textbox" type="text" name="branch" required><br>
+
+City: <br>
+<input class="textbox" type="text" name="branch" required><br>
+
+Zip/Postal Code: <br>
+<input class="textbox" type="number" name="branch" required><br>
+
+    <label for="province">Province</label>
+    <br><select name="province" id="province">
+
+        <option disabled selected value> -- select an option -- </option>
+        <option value="gauteng">Gauteng</option>
+        <option value="nc">Northern Cape</option>
+        <option value="ec">Eastern Cape</option>
+        <option value="nw">North West</option>
+        <option value="lp">Limpopo</option>
+        <option value="kzn">Kwazulu-Natal</option>
+        <option value="fs">Free State</option>
+        <option value="mp">Mpumalanga</option>
+        <option value="wc">Western Cape</option>
+
+    </select><br>
+
+<br><input class="button" type="submit" value="Submit" required>
+
+</fieldset>
 </form>
 
 </main>

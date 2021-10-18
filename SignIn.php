@@ -38,7 +38,7 @@
         <label for="password">Password:</label><br>
         <input class="textbox" type="password" id="password" name="password" placeholder="Password"></br></br>
         
-        <input class="button" type="submit" id="submit" value="Log In"><br><br>
+        <input class="button" type="submit" id="submit" value="Sign In"><br><br>
        </form>
      
 <!--End of log in form section-->

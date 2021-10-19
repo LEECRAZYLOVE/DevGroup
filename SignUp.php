@@ -57,7 +57,7 @@
 
             <!--<input type="hidden" name="clientId" id="clientId" value="<?php //echo $clientId; ?> To get the latest clientId so we can make the new one--> 
                 
-            <input type="submit" id="submit" value="Sign Up">
+            <input class="button" type="submit" id="submit" value="Sign Up">
         
         </form>
     

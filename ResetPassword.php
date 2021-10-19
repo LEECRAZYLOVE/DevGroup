@@ -62,7 +62,7 @@ if (isset($_REQUEST['submit'])) {
 ?>
 <h1>Reset Password</h1>
 
-<form action="ResetPassword.php" method="POST">
+<form action="ResetPasswordQuery.php" method="POST">
 
 <fieldset>
     <legend>Change Password:</legend>

@@ -79,23 +79,21 @@
 <fieldset>
 <legend>Only applicable when selling in the store</legend>
     <label for="bank">Bank:</label>
-    <br><select name="Bank" id="bank">
-
+    <br><select name="bank" id="bank">
         <option disabled selected value> -- select an option -- </option>
-        <option value="absa">Absa</option>
-        <option value="capitec">Capitec</option>
-        <option value="discovery">Discovery</option>
-        <option value="fnb">FNB</option>
-        <option value="nedbank">Nedbank</option>
-        <option value="standardbank">Standardbank</option>
-
+        <option value="Absa" name="bank">Absa</option>
+        <option name="Capitec" value="bank">Capitec</option>
+        <option name="Discovery" value="bank">Discovery</option>
+        <option name="FNB" value="bank">FNB</option>
+        <option name="Nedbank" value="bank">Nedbank</option>
+        <option name="Standard Bank" value="bank">Standardbank</option>
     </select><br>
 
 Branch: <br>
 <input class="textbox" type="number" name="branch"><br>
 
 Account No.: <br>
-<input class="textbox" type="number" name="branch"><br>
+<input class="textbox" type="number" name="account"><br>
 
 <br><input class="button" type="submit" value="Submit">
 
@@ -109,27 +107,27 @@ Account No.: <br>
 
 <fieldset>
 Street Adress: <br>
-<input class="textbox" type="text" name="branch"><br>
+<input class="textbox" type="text" name="street"><br>
 
 City: <br>
-<input class="textbox" type="text" name="branch" required><br>
+<input class="textbox" type="text" name="city" required><br>
 
 Zip/Postal Code: <br>
-<input class="textbox" type="number" name="branch" required><br>
+<input class="textbox" type="number" name="postcode" required><br>
 
     <label for="province">Province</label>
     <br><select name="province" id="province">
 
         <option disabled selected value> -- select an option -- </option>
-        <option value="gauteng">Gauteng</option>
-        <option value="nc">Northern Cape</option>
-        <option value="ec">Eastern Cape</option>
-        <option value="nw">North West</option>
-        <option value="lp">Limpopo</option>
-        <option value="kzn">Kwazulu-Natal</option>
-        <option value="fs">Free State</option>
-        <option value="mp">Mpumalanga</option>
-        <option value="wc">Western Cape</option>
+        <option name="province" value="Gauteng">Gauteng</option>
+        <option name="province" value="NC">Northern Cape</option>
+        <option name="province" value="EC">Eastern Cape</option>
+        <option name="province" value="NW">North West</option>
+        <option name="province" value="Limpopo">Limpopo</option>
+        <option name="province" value="KZN">Kwazulu-Natal</option>
+        <option name="province" value="FS">Free State</option>
+        <option name="province" value="MP">Mpumalanga</option>
+        <option name="province" value="WC">Western Cape</option>
 
     </select><br>
 

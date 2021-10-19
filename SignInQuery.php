@@ -7,7 +7,8 @@ $currentPassword = $_REQUEST['password'];
 
 $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
        or die("ERROR: Database connection has failed");
-$query = "SELECT Password FROM user WHERE Username = '$currentUsername'";
+$query = "SELECT Password FROM user 
+            WHERE Username = '$currentUsername'";
 
 $result = mysqli_query($conn, $query)
           or die("ERROR: Incorrect password username combination.");
@@ -16,8 +17,7 @@ while($row = mysqli_fetch_array($result))
 {
     $password = $row['password'];
 }
-
-          mysqli_close($conn); 
+mysqli_close($conn); 
 
 if ($password== $currentPassword) {
 //redirecting to the home page once successful

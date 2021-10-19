@@ -1,12 +1,6 @@
-<!doctype html>
-<html>
-<head> 
-    <meta charset="utf-8">   	 
-</head> 
-<body>
 <?php
 // Accessing the database
- require_once("config.php");
+require_once("config.php");
 
 $currentUsername = $_REQUEST['username'];
 $currentPassword = $_REQUEST['password'];
@@ -18,12 +12,14 @@ $query = "SELECT Password FROM user WHERE Username = '$currentUsername'";
 $result = mysqli_query($conn, $query)
           or die("ERROR: Incorrect password username combination.");
 
-while($row = mysqli_fetch_array($result)){
-$password = $row['Password'];
+while($row = mysqli_fetch_array($result))
+{
+    $password = $row['password'];
 }
-mysqli_close($conn); 
 
-if ($query == $currentPassword) {
+          mysqli_close($conn); 
+
+if ($password== $currentPassword) {
 //redirecting to the home page once successful
 header("Location:HomeGeneral.php");
 } else {
@@ -32,5 +28,3 @@ header("Location:HomeGeneral.php");
 }
 
 ?>
-</body>
-</html>

@@ -31,7 +31,7 @@
       <h1>Sign In</h1>
 <!--Start of log in form section-->      
       
-       <form id="form" action="SignInQuery.php" method="POST" onsubmit="Clear()"> <!--Should take you to the admin, client or driver's home page-->
+       <form id="form" action="SignInQuery.php" method="post"> <!--Should take you to the admin, client or driver's home page-->
         <label for="username">Username:</label><br>
         <input class="textbox" type="username" id="username" name="username" placeholder="janedoe488@gmail.com"></br><br>
     
@@ -47,11 +47,11 @@
 </main>
 
 <!--To clear the form input after submit button has been clicked-->
-<script>
+<!-- <script>
 function Clear() {
   document.getElementById("form").reset();
 }
-</script>
+</script> -->
 
 
 

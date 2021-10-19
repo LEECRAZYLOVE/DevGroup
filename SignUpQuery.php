@@ -9,9 +9,9 @@
 
     //this page will be used to add client information when they sign up to the dabatase
     $firstname = $_REQUEST['firstname'];
-    $lastname = $_REQUEST['surname'];
+    $lastname = $_REQUEST['lastname'];
     $email = $_REQUEST['email'];
-    $phone = $_REQUEST['contact'];
+    $contact = $_REQUEST['contact'];
     $password = $_REQUEST['password'];
     $username = $_REQUEST['username'];
     $UserId = substr($username,0,4) . "5471";
@@ -22,7 +22,8 @@
                 or die("<strong style = \"color : red; \"> Could not connect to the database! </strong>");
 
     // query instructions 
-    $query = "INSERT INTO user (User_ID, FirstName, LastName, Email, Password, ContactDetails, Username) VALUES ('$UserId', '$firstname', '$lastname', '$email', '$password', '$phone', $username)";
+    $query = "INSERT INTO user(User_ID, FirstName, LastName, Email, Password, ContactDetails, Username) 
+              VALUES ('$UserId', '$firstname', '$lastname', '$email', '$password', '$contact', '$username')";
 
     $result = mysqli_query($connect, $query)
                 or die("<strong style = \"color : red; \"> Could not execute query! </strong>");
@@ -32,7 +33,7 @@
     
     //redirecting to the home page once successful
     header("Location:HomeGeneral.php")
-    ?>
+  ?> 
 
 </body> 
 </html>

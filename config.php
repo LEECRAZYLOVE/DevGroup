@@ -6,7 +6,7 @@
   <body>
 
 <?php
-define("SERVERNAME", "127.0.0.1");
+define("SERVERNAME", "192.168.0.111");
 define("USERNAME", "Guest");
 define("PASSWORD", "@DevGroup3");
 define("DATABASE", "tcgstore");

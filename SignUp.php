@@ -52,7 +52,7 @@
                 title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required><br><br>
 
             <label for="repeat_password"> Repeat Password:</label><br>
-            <input class="textbox" type="password" id="repeat_password" placeholder = "Password" pattern = "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+            <input class="textbox" type="password" id="repeat_password" name="repeat_password" placeholder = "Password" pattern = "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                 title="Must match the previous password" required><br><br>
 
             <!--<input type="hidden" name="clientId" id="clientId" value="<?php //echo $clientId; ?> To get the latest clientId so we can make the new one--> 

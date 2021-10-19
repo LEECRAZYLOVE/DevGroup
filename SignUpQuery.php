@@ -17,7 +17,7 @@
     $username = $_REQUEST['username'];
     $UserId = substr($username,0,4) . "5471";
 
-    if ($password = $rpassword) { //Checks if the passwords match
+    if ($password == $rpassword) { //Checks if the passwords match
       require_once("config.php");
     //connecting to the database
     $connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)

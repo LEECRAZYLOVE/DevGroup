@@ -23,7 +23,7 @@ $password = $row['Password'];
 }
 mysqli_close($conn); 
 
-if ($query = $currentPassword) {
+if ($query == $currentPassword) {
 //redirecting to the home page once successful
 header("Location:HomeGeneral.php");
 } else {

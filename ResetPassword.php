@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Itim">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="CSS\Forms.css">
-    <title>Manage Account</title>   
+    <title>Reset Password</title>   
 </head>
 <body>
 <!--Start of the global navigation section-->
@@ -26,10 +26,43 @@
 </header>
 <!--End of the global navigation section-->
 <main>
+<?php //Rest password query in the same page
+if (isset($_REQUEST['submit'])) {
+    
+    //$client_id = $_REQUEST['clientId'];
+    $password = $_REQUEST['password'];
+    $rpassword = $_REQUEST['rpassword'];
 
-<h1>Account Details</h1>
+    if ($password != $rpassword) {
+      echo '<script> 
+            alert("Unsuccessful: Your passwords do not match.");
+            </script>'; //Alerts the user that the passwords do not match   
+    } else {
 
-<form>
+    require_once("config.php");
+    //connecting to the database
+    $connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
+                or die("<strong style = \"color : red; \"> Could not connect to the database! </strong>");
+
+    // query instructions 
+    $query = "UPDATE user SET Password = '$password'
+                WHERE USER_ID = \"Will5471\"";
+
+    $result = mysqli_query($connect, $query)
+                or die("<strong style = \"color : red; \"> Could not execute query! </strong>");
+
+    //close connection to the database
+    mysqli_close($connect);
+    echo '<script> 
+            alert("Your password was successfully updated!");
+            window.location.href="HomeGeneral.php";
+            </script>'; //Alerts the user redirects back to account page   
+    }
+}
+?>
+<h1>Reset Password</h1>
+
+<form action="ResetPassword.php" method="POST">
 
 <fieldset>
     <legend>Change Password:</legend>
@@ -38,7 +71,7 @@
     <input type="password" id="pasword" name="password" required> <br>
 
     <label for="password">Confirm password</label> <br>
-    <input type="password" id="pasword" name="password" required> <br>
+    <input type="password" id="pasword" name="rpassword" required> <br>
 
     <br><input class="button" type="submit" value="Confirm password">
 

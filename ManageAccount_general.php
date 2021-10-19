@@ -52,27 +52,18 @@
 <!--Update Account Details Forms -->
 <h1>Account Details:</h1>
 
-<form action="UpdatePasswordQuery.php" method="POST">
-
-Username: <?php echo $username ?> <br>
-<br>
-
-Name: <?php echo $firstname . " " . $lastname ; ?> <br>
-<br>
-
-<br>
-<label for="email">New Email:</label><br>
-<input class="textbox" type="email" id="email" name="email" placeholder="Leave blank if there are no changes"><br><br>
-
+<form action="UpdateEmailQuery.php" method="POST">
 <fieldset>
-    
-    <legend>Change Password:</legend>
 
-    <label for="password">New Password</label> <br>
-    <input type="password" id="pasword" name="password"> <br>
+        Username: <?php echo $username ?> <br>
+        <br>
 
-    <label for="password">Confirm password</label> <br>
-    <input type="password" id="pasword" name="password"> <br>
+        Name: <?php echo $firstname . " " . $lastname ; ?> <br>
+        
+        <br>
+        <label for="email">New Email:</label><br>
+        <input class="textbox" type="email" id="email" name="email" placeholder="Leave blank if there are no changes"><br>
+
 
     <br><input class="button" type="submit" value="Confirm password">
 
@@ -86,6 +77,7 @@ Name: <?php echo $firstname . " " . $lastname ; ?> <br>
 <h2>Banking Details:</h2>
 
 <fieldset>
+<legend>Only applicable when selling in the store</legend>
     <label for="bank">Bank:</label>
     <br><select name="Bank" id="bank">
 
@@ -116,7 +108,6 @@ Account No.: <br>
 <h2>Delivery Address:</h2>
 
 <fieldset>
-
 Street Adress: <br>
 <input class="textbox" type="text" name="branch"><br>
 

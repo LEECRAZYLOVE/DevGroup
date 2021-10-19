@@ -7,7 +7,7 @@ $currentPassword = $_REQUEST['password'];
 
 $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
        or die("ERROR: Database connection has failed");
-$query = "SELECT password FROM user WHERE UserName = '$currentUsername'";
+$query = "SELECT Password FROM user WHERE Username = '$currentUsername'";
 
 $result = mysqli_query($conn, $query)
           or die("ERROR: Incorrect password username combination.");

@@ -25,21 +25,39 @@
   </nav>
 </header>
 <!--End of the global navigation section-->
-<?php
-            if (isset($_REQUEST['submit'])) {
-            }
-<?
-
 <main>
+<?php //Viewing Profile Details
+    //$clientId = $_REQUEST['id'];
+    require_once("config.php");
+    //connecting to the database
+    $connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
+                or die("<strong style = \"color : red; \"> Could not connect to the database! </strong>");
 
+    // query instructions 
+    $query = "SELECT  FirstName, LastName, Username FROM user WHERE USER_ID = \"Leet5471\"";
+
+    $result = mysqli_query($connect, $query)
+                or die("<strong style = \"color : red; \"> Could not execute query! </strong>");
+
+    while($row = mysqli_fetch_array($result)){
+      $firstname = $row['FirstName'];
+      $lastname =  $row['LastName'];
+      $username = $row['Username'];   
+      //echo "<h3>" ."Welcome ". $row['firstName'] . " " . $row['lastName'] ."!". "</h3>". "<br>";
+    }   
+    //close connection to the database
+    mysqli_close($connect);
+  ?>
+
+<!--Update Account Details Forms -->
 <h1>Account Details:</h1>
 
-<form>
+<form action="UpdatePasswordQuery.php" method="POST">
 
-Username: <br>
+Username: <?php echo $username ?> <br>
 <br>
 
-Name: <br>
+Name: <?php echo $firstname . " " . $lastname ; ?> <br>
 <br>
 
 <br>
@@ -47,6 +65,7 @@ Name: <br>
 <input class="textbox" type="email" id="email" name="email" placeholder="Leave blank if there are no changes"><br><br>
 
 <fieldset>
+    
     <legend>Change Password:</legend>
 
     <label for="password">New Password</label> <br>
@@ -62,12 +81,11 @@ Name: <br>
 </form>
 
 
-<form class="bankdetails">
+<form class="bankdetails" action="UpdateBankQuery.php" method="POST">
 
 <h2>Banking Details:</h2>
 
 <fieldset>
-
     <label for="bank">Bank:</label>
     <br><select name="Bank" id="bank">
 
@@ -93,7 +111,7 @@ Account No.: <br>
 
 </form>
 
-<form>
+<form action="UpdateAddressQuery.php" method="POST">
 
 <h2>Delivery Address:</h2>
 

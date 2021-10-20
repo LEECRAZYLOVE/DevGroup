@@ -29,10 +29,10 @@ body{
 } 
 
 .product-content {
-  border: 1px solid #dfe5e9;
+  border: 1px solid black;
   margin-bottom: 20px;
   margin-top: 12px;
-  background: #fff
+  background: black
 }
 
 .product-content .carousel-control.left {
@@ -40,7 +40,7 @@ body{
 }
 
 .product-content {
-  background-color: #fff;
+  background-color: black;
   display: block;
   min-height: 238px;
   overflow: hidden;

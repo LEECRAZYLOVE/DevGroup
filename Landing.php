@@ -29,9 +29,7 @@
 <main>
   <?php //Displaying all the products
     $cards = array(); //To store the picture file paths or the cards
-    $cardNames = array();
-    $TCG_IDs = array();
-    // add the database credentials
+    
     require_once("config.php");
     // make connection to database
     $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)

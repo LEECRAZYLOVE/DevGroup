@@ -39,7 +39,7 @@ $selectedProduct = $_REQUEST['id'];
 $connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
                 or die("<strong style = \"color : red; \"> Could not connect to the database! </strong>");
 
-$query = "SELECT Name, Description, Price, Quality, Year, Admin_Class FROM tcg WHERE TCG_ID = '$selectedProduct'";
+$query = "SELECT Name, Description, Price, Quality, Year, Admin_Class, Seller_ID, Picture FROM tcg WHERE TCG_ID = '$selectedProduct'";
 
 $result = mysqli_query($connect, $query)
                 or die("<strong style = \"color : red; \"> Could not execute query! </strong>");
@@ -51,10 +51,20 @@ $result = mysqli_query($connect, $query)
                   $quality = $row['Quality'];
                   $year = $row['Year'];
                   $adminclass = $row['Admin_Class'];
+                  $sellerID = $row['Seller_ID'];
+                  $picture = $row['Picture'];
                 }   
-                //close connection to the database
-                mysqli_close($connect);
 
+
+$sellerq = "SELECT Username FROM user WHERE USER_ID = '$sellerID'";
+
+$sellresult = mysqli_query($connect, $sellerq)
+                or die("<strong style = \"color : red; \"> Could not execute query! </strong>");
+
+                while($row = mysqli_fetch_array($sellresult)){
+                  $username = $row['Username'];
+                }
+                mysqli_close($connect);
 
 
 ?>
@@ -67,34 +77,13 @@ Year: <?php echo $year ?> <br> -->
     <!-- product -->
     <div class="product-content product-wrap clearfix product-deatil">
         <div class="row">
-            <div class="col-md-5 col-sm-12 col-xs-12">
+        <div class="col-md-5 col-sm-12 col-xs-12">
 
 <section>
     <div class="rt-container">
-          <div class="col-rt-12">
-              
-              <div class="image-gallery">
-                  <input id="tab1" type="radio" name="tabs" checked>
-                  <label for="tab1"><img width="100" height="100" src="Images/Categories/Cardfight/card1.jpg"></label>  
-                    
-                  <input id="tab2" type="radio" name="tabs">
-                  <label for="tab2"><img width="100" height="100" src="Images/Categories/Cardfight/card2.jpg"></label>  
-                    
-                  <input id="tab3" type="radio" name="tabs">
-                  <label for="tab3"><img width="100" height="100" src="Images/Categories/Cardfight/card3.jpg"></label>
-
-                  <section id="content1">
-                    <img src="Images/Categories/Cardfight/card1.jpg">
-                  </section>  
-                    
-                  <section id="content2">
-                    <img src="Images/Categories/Cardfight/card2.jpg">
-                  </section>
-                    
-                  <section id="content3">
-                    <img src="Images/Categories/Cardfight/card3.jpg">
-                  </section>
-			  </div>
+          <div class="picture">
+                    <img src="Images/Cards/<?php echo $picture?>">
+			    </div>
 
 		</div>
     </div>
@@ -103,12 +92,14 @@ Year: <?php echo $year ?> <br> -->
             </div>
 
             <div class="col-md-6 col-md-offset-1 col-sm-12 col-xs-12">
+
             <hr />
+
                 <div class="product_title_seller">
                 <h2 class="name">
                 <?php echo $name ?> <br>
                 </h2>
-                <small>Product by: <a href="javascript:void(0);">Adeline</a></small>
+                <small>Product by: <?php echo $username ?></small>
                 </div>
                 <hr />
 
@@ -116,6 +107,9 @@ Year: <?php echo $year ?> <br> -->
                 R<?php echo $price ?>
                 <small>*includes Shipping</small>
                 </h3>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                        <button class="btn btn-white btn-default"><a href="javascript:void(0);" class="btn btn-success btn-lg">Add to cart</a></button> <br>
+                    </div>
 
                 <hr />
 
@@ -136,13 +130,8 @@ Year: <?php echo $year ?> <br> -->
                         </div>
                     </div>
 
-                    <hr />
-
                     <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-6">
-                        <button class="btn btn-white btn-default"><a href="javascript:void(0);" class="btn btn-success btn-lg">Add to cart</a></button> <br>
-                        <button class="btn btn-white btn-default"><i class="fa fa-envelope"></i> Contact Seller</button>
-                    </div>
+
                 </div>
                 </div>
 
@@ -152,7 +141,7 @@ Year: <?php echo $year ?> <br> -->
     </div>
      </div>
               <fieldset>
-                <legend>Similar Products:</legend>
+                <legend>:</legend>
                 <?php
               // add the database credentials
               require_once("config.php");
@@ -160,7 +149,7 @@ Year: <?php echo $year ?> <br> -->
               $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
                   or die("ERROR: unable to connect to database!");
               // issue query instructions
-              $query = "SELECT TCG_ID, Name, Description, Quality, Year, Price FROM tcg WHERE Admin_Class LIKE '$adminclass' ORDER BY Price ASC";
+              $query = "SELECT TCG_ID, Name, Description, Quality, Year, Price, Picture FROM tcg WHERE Admin_Class LIKE '$adminclass' ORDER BY Price ASC";
               $result = mysqli_query($conn, $query) or die("ERROR: unable to execute query!");
               // start table
               echo "<table width=\"80%\" border=0>
@@ -168,7 +157,7 @@ Year: <?php echo $year ?> <br> -->
                       <td>Picture</td>
                       <td>Name</td>
                       <td>Description</td>
-                      <td>Quality</td>
+                      <td>Condition</td>
                       <td>Year</td>
                       <td>Price</td>
                       <td colspan=\"2\"></td>
@@ -176,10 +165,10 @@ Year: <?php echo $year ?> <br> -->
               // populate table rows with data from database
               while ($row = mysqli_fetch_array($result)) {
                   echo "<tr>";
-                  echo "<td>" . "<img src=\"boards/" . $row['picture'] . "\">" . "</td>";
+                  echo "<td>" . "<img src=\"Images/Cards/" . $row['Picture'] . "\" width=\"100\">" . "</td>";
                   echo "<td>" . $row['Name'] . "</td>";
                   echo "<td>" . $row['Description'] . "</td>";
-                  echo "<td>" . $row['Quality'] . "</td>";
+                  echo "<td>" . $row['Quality'] . "/5</td>";
                   echo "<td>" . $row['Year'] . "</td>";
                   echo "<td>R" . $row['Price'] . "</td>";
                   echo "<td>" . "<a href=\"Display_tcg.php?id=" . $row['TCG_ID'] . "\"><input type=\"button\" value=\"View\"></a>" . "</td>";

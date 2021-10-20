@@ -65,8 +65,8 @@
         <input class="textbox" type="email" id="email" name="email" placeholder="Leave blank if there are no changes"><br>
 
 
-    <br><input class="button" type="submit" value="Confirm password">
-
+    <br><input class="button" type="submit" value="Update Email">
+    <br><br><a style="color:white; text-align:center;" href="ResetPassword.php">Reset Password</a>
 </fieldset>
 
 </form>
@@ -135,7 +135,6 @@ Zip/Postal Code: <br>
 
 </fieldset>
 </form>
-
 </main>
 </body>
 <footer>

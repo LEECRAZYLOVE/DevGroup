@@ -30,16 +30,16 @@
 // Accessing the database
 require_once("config.php");
 
-$TCG_ID = "fles1596";
-$selectedProduct = $TCG_ID;
+ $id = "yugi1010";
+ $selectedProduct = $id;
 
-// $selectedProduct = $_REQUEST['TCG_ID'];
+//$selectedProduct = $_REQUEST['id'];
 
 
 $connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
                 or die("<strong style = \"color : red; \"> Could not connect to the database! </strong>");
 
-$query = "SELECT Name, Description, Price, Quality, Year FROM tcg WHERE TCG_ID = '$selectedProduct'";
+$query = "SELECT Name, Description, Price, Quality, Year, Admin_Class FROM tcg WHERE TCG_ID = '$selectedProduct'";
 
 $result = mysqli_query($connect, $query)
                 or die("<strong style = \"color : red; \"> Could not execute query! </strong>");
@@ -50,6 +50,7 @@ $result = mysqli_query($connect, $query)
                   $price = $row['Price']; 
                   $quality = $row['Quality'];
                   $year = $row['Year'];
+                  $adminclass = $row['Admin_Class'];
                 }   
                 //close connection to the database
                 mysqli_close($connect);
@@ -103,11 +104,12 @@ Year: <?php echo $year ?> <br> -->
 
             <div class="col-md-6 col-md-offset-1 col-sm-12 col-xs-12">
             <hr />
+                <div class="product_title_seller">
                 <h2 class="name">
-                <?php echo $name ?>
-                <small>Product by: <a href="javascript:void(0);">Adeline</a></small>
+                <?php echo $name ?> <br>
                 </h2>
-
+                <small>Product by: <a href="javascript:void(0);">Adeline</a></small>
+                </div>
                 <hr />
 
                 <h3 class="price-container">
@@ -146,7 +148,52 @@ Year: <?php echo $year ?> <br> -->
 
             </div>
         </div>
+        
     </div>
+     </div>
+              <fieldset>
+                <legend>Similar Products:</legend>
+                <?php
+              // add the database credentials
+              require_once("config.php");
+              // make connection to database
+              $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
+                  or die("ERROR: unable to connect to database!");
+              // issue query instructions
+              $query = "SELECT TCG_ID, Name, Description, Quality, Year, Price FROM tcg WHERE Admin_Class LIKE '$adminclass'";
+              $result = mysqli_query($conn, $query) or die("ERROR: unable to execute query!");
+              // start table
+              echo "<table width=\"80%\" border=0>
+                      <tr bgcolor=\"#428bca\">
+                      <td>Picture</td>
+                      <td>Name</td>
+                      <td>Description</td>
+                      <td>Quality</td>
+                      <td>Year</td>
+                      <td>Price</td>
+                      <td colspan=\"2\"></td>
+                      </tr>";
+              // populate table rows with data from database
+              while ($row = mysqli_fetch_array($result)) {
+                  echo "<tr>";
+                  echo "<td>" . "<img src=\"boards/" . $row['picture'] . "\">" . "</td>";
+                  echo "<td>" . $row['Name'] . "</td>";
+                  echo "<td>" . $row['Description'] . "</td>";
+                  echo "<td>" . $row['Quality'] . "</td>";
+                  echo "<td>" . $row['Year'] . "</td>";
+                  echo "<td>R" . $row['Price'] . "</td>";
+                  echo "<td>" . "<a href=\"Display_tcg.php?id=" . $row['TCG_ID'] . "\"><input type=\"button\" value=\"View\"></a>" . "</td>";
+                  echo "<td>" . "<a href=\"delete.php?id=" . $row['TGC_ID'] . "\"><input type=\"button\" value=\"Add to Cart\" onClick=\"
+                  return confirm('Are you sure you want to delete?')\"></a>" . "</td>";
+                  echo "</tr>";
+              }
+              // end table
+              echo "</table>";
+              // close the connection to database
+              mysqli_close($conn);
+            ?>
+              </fieldset>
+    
     <!-- end product -->
 
 </main>

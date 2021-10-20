@@ -30,10 +30,10 @@
 // Accessing the database
 require_once("config.php");
 
-$TCG_ID = "fles1596";
-$selectedProduct = $TCG_ID;
+//$TCG_ID = "fles1596";
+//$selectedProduct = $TCG_ID;
 
-// $selectedProduct = $_REQUEST['TCG_ID'];
+ $selectedProduct = $_REQUEST['id'];
 
 
 $connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)

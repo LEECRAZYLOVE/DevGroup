@@ -30,10 +30,10 @@
 // Accessing the database
 require_once("config.php");
 
-//$TCG_ID = "fles1596";
-//$selectedProduct = $TCG_ID;
+//  $id = "yugi1010";
+//  $selectedProduct = $id;
 
- $selectedProduct = $_REQUEST['id'];
+$selectedProduct = $_REQUEST['id'];
 
 
 $connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
@@ -160,7 +160,7 @@ Year: <?php echo $year ?> <br> -->
               $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
                   or die("ERROR: unable to connect to database!");
               // issue query instructions
-              $query = "SELECT TCG_ID, Name, Description, Quality, Year, Price FROM tcg WHERE Admin_Class LIKE '$adminclass'";
+              $query = "SELECT TCG_ID, Name, Description, Quality, Year, Price FROM tcg WHERE Admin_Class LIKE '$adminclass' ORDER BY Price ASC";
               $result = mysqli_query($conn, $query) or die("ERROR: unable to execute query!");
               // start table
               echo "<table width=\"80%\" border=0>
@@ -183,8 +183,7 @@ Year: <?php echo $year ?> <br> -->
                   echo "<td>" . $row['Year'] . "</td>";
                   echo "<td>R" . $row['Price'] . "</td>";
                   echo "<td>" . "<a href=\"Display_tcg.php?id=" . $row['TCG_ID'] . "\"><input type=\"button\" value=\"View\"></a>" . "</td>";
-                  echo "<td>" . "<a href=\"delete.php?id=" . $row['TGC_ID'] . "\"><input type=\"button\" value=\"Add to Cart\" onClick=\"
-                  return confirm('Are you sure you want to delete?')\"></a>" . "</td>";
+                  echo "<td>" . "<a href=\"delete.php?id=" . $row['TGC_ID'] . "\"><input type=\"button\" value=\"Add to Cart\"></a>" . "</td>";
                   echo "</tr>";
               }
               // end table

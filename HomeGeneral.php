@@ -71,7 +71,29 @@
 
 <main>
 <!--Start of the HTML filter component -->
+<?php //Displaying all the products
+    $cards = array(); //To store the picture file paths or the cards
+    
+    require_once("config.php");
+    // make connection to database
+    $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
+        or die("ERROR: unable to connect to database!");
+    // issue query instructions
+    $query = "SELECT Picture, Name, TCG_ID, Alternative FROM tcg";
+    $result = mysqli_query($conn, $query) or die("ERROR: unable to execute query!");
 
+    $i = 0;
+    while ($row = mysqli_fetch_array($result)) {
+      $cards[$i] = $row["Picture"];
+      $cards[$i+1] = $row["TCG_ID"];
+      $cards[$i+2] = $row["Name"];  
+      $cards[$i+3] = $row["Alternative"]; 
+      $i+=4; 
+    }
+
+    // close the connection to database
+    mysqli_close($conn);
+?>
 <h2>Filter</h2>
 
 <div id="myBtnContainer">
@@ -145,59 +167,13 @@ for (var i = 0; i < btns.length; i++) {
 }
 </script>
 
-
-<!--End of the HTML filter section-->
-
-<!--Delete this 
-
-<style>
-.filterDiv {
-  float: left;
-  background-color: #2196F3;
-  color: #ffffff;
-  width: 100px;
-  line-height: 100px;
-  text-align: center;
-  margin: 2px;
-  display: none;
-}
-
-.show {
-  display: block;
-}
-
-.container {
-  margin-top: 20px;
-  overflow: hidden;
-}
-
-/* Style the buttons */
-.btn {
-  border: none;
-  outline: none;
-  padding: 12px 16px;
-  background-color: #f1f1f1;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #ddd;
-}
-
-.btn.active {
-  background-color: #666;
-  color: white;
-}
-</style>
-
-
-
-End of the CSS filter section-->
+<!--End of the HTML/CSS filter section-->
 <h1 style="color:lightcyan; margin-left: 10px"><b>Featured</b></h1>
 
-<!--Start of Categories section to showcase what cards are featured in the store-->
-<section class="allCategories">
+<!--Start of Categories section to showcase all the cards in the store-->
+<section class="filterDiv magic pokemon yu-Gi-Oh! cardfight dragon Ball Super flesh and blood"">
 
+</section>
 <h2>Magic</h2>
 <ul class="tcgCards_category"> <!-- Magic -->
     <li><img class="tcgCards_image" src="images\categories\magic\card1.jpg" style="width:200px; height:250px;"></li>
@@ -251,7 +227,6 @@ End of the CSS filter section-->
   <li><img class="tcgCards_image" src="images\categories\fresh and blood\card4.jpg" style="width:200px; height:250px;"></li>  
   <li><img class="tcgCards_image" src="images\categories\fresh and blood\card5.jpg" style="width:200px; height:250px;"></li>
 </ul>
-</section>
 </main>
 
 <!--Just a footer for profesionalism-->

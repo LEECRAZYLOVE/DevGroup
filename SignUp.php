@@ -30,39 +30,39 @@
      <h1>Create New Account</h1>
 <!--Start of sign up form section-->
      
-        <form id="form" action="AddClientQuery.php" method = "POST" onsubmit="Clear()"> <!--Should take you to the client or driver's home page-->
+        <form id="form" action="SignUpQuery.php" method = "POST"> <!--Should take you to the client or driver's home page-->
 
             <label for="firstname">First Name:</label><br>
-            <input class="textbox" type="text" id="firstname" placeholder="Jane" required><br><br>
+            <input class="textbox" type="text" id="firstname" id="firstname" name="firstname" placeholder="Jane" required><br><br>
 
             <label for="Surname">Surname:</label><br>
-            <input class="textbox" type="text" id="surname" placeholder="Doe" required><br><br>
+            <input class="textbox" type="text" id="lastname" name="lastname" placeholder="Doe" required><br><br>
 
             <label for="email">Email:</label><br>
-            <input class="textbox" type="email" id="email" placeholder="janedoe488@gmail.com" required><br><br>
+            <input class="textbox" type="email" id="email" name="email" placeholder="janedoe488@gmail.com" required><br><br>
 
             <label for="username">Username:</label><br>
-            <input class="textbox" type="text" id="email" placeholder="@jane_doe" required><br><br>
+            <input class="textbox" type="text" id="username" name="username" placeholder="@jane_doe" required><br><br>
 
             <label for="contact">Contact Number:</label><br>
-            <input class="textbox" type="text" id="contact" placeholder = "0783456789" maxlength = "10" pattern = "[0-9]{10}" title ="Please enter your 10 digit cellphone number" required><br><br>
+            <input class="textbox" type="text" id="contact" name="contact" placeholder = "0783456789" maxlength = "10" pattern = "[0-9]{10}" title ="Please enter your 10 digit cellphone number" required><br><br>
 
             <label for="password">Password:</label><br>
-            <input class="textbox" type="password" id="password" placeholder = "Password" pattern = "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+            <input class="textbox" type="password" id="password" name="password" placeholder = "Password" pattern = "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                 title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required><br><br>
 
             <label for="repeat_password"> Repeat Password:</label><br>
-            <input class="textbox" type="password" id="repeat_password" placeholder = "Password" pattern = "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+            <input class="textbox" type="password" id="repeat_password" name="repeat_password" placeholder = "Password" pattern = "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                 title="Must match the previous password" required><br><br>
 
-            <input type="hidden" name="clientId" id="clientId" value="<?php echo $clientId; ?>"> <!--To get the latest clientId so we can make the new one--> 
+            <!--<input type="hidden" name="clientId" id="clientId" value="<?php //echo $clientId; ?> To get the latest clientId so we can make the new one--> 
                 
             <input class="button" type="submit" id="submit" value="Sign Up">
         
         </form>
     
 <!--End of sign up form section-->
-        <a href="SignUp.php">Already have an account</a>
+        <a href="SignIn.php">Already have an account</a>
   <ul>
 
 <!--To clear the form input after submit button has been clicked-->

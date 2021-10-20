@@ -30,68 +30,101 @@
 <!--End of the global navigation section-->
 
 <main>
-    <h1 style="color:black; margin-top: 20px; text-align: center; margin-right: 500px; margin-left: 500px; background-color: darkcyan"><b>Featured</b></h1>
+  <?php //Displaying all the products
+    $cards = array(); //To store the picture file paths or the cards
+    
+    require_once("config.php");
+    // make connection to database
+    $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
+        or die("ERROR: unable to connect to database!");
+    // issue query instructions
+    $query = "SELECT Picture, Name, TCG_ID, Alternative FROM tcg";
+    $result = mysqli_query($conn, $query) or die("ERROR: unable to execute query!");
+
+    $i = 0;
+    while ($row = mysqli_fetch_array($result)) {
+      $cards[$i] = $row["Picture"];
+      $cards[$i+1] = $row["TCG_ID"];
+      $cards[$i+2] = $row["Name"];  
+      $cards[$i+3] = $row["Alternative"]; 
+      $i+=4; 
+    }
+
+    // close the connection to database
+    mysqli_close($conn);
+?>
+
+
+
+<h1 style="color:black; margin-top: 20px; text-align: center; margin-right: 500px; margin-left: 500px; background-color: darkcyan"><b>Featured</b></h1>
 
 <!--Start of Categories section to showcase what cards are featured in the store-->
 <section class="allCategories">
 
 <h2>Magic</h2>
 <ul class="tcgCards_category"> <!-- Magic -->
-    <li><img class="tcgCards_image1" src="images\categories\magic\card1.jpg" style="width:200px; height:250px;"></li>
-    <li><img class="tcgCards_image2" src="images\categories\magic\card2.jpg" style="width:200px; height:250px;"></li>  
-    <li><img class="tcgCards_image3" src="images\categories\magic\card3.jpg" style="width:200px; height:250px;"></li>  
-    <li><img class="tcgCards_image4" src="images\categories\magic\card4.jpg" style="width:200px; height:250px;"></li>  
-    <li><img class="tcgCards_image5" src="images\categories\magic\card5.jpg" style="width:200px; height:250px;"></li>
-   <!-- <li><img class="tcgCards_image6" src="images\categories\magic\card6.jpg" style="width:200px; height:250px;"></li>
-    <li><img class="tcgCards_image7" src="images\categories\magic\card7.jpg" style="width:200px; height:250px;"></li>
-    <li><img class="tcgCards_image8" src="images\categories\magic\card8.jpg" style="width:200px; height:250px;"></li>
-    <li><img class="tcgCards_image9" src="images\categories\magic\card9.jpg" style="width:200px; height:250px;"></li>
-    <li><img class="tcgCards_image10" src="images\categories\magic\card10.jpg" style="width:200px; height:250px;"></li>-->
+    <?php
+      for ($i=0; $i < count($cards); $i+=4) {
+        if (substr($cards[$i],0,1) == 'm' && $cards[$i+3] != 'T') { //Checking to see that it's in the right category
+          echo "<li><a style=\"text-decoration:none;\" href=\"display_tcg.php?id=" . $cards[$i+1] . "\"><p style =\"text-align:center;\">" . $cards[$i+2] . "</p><img class=\"tcgCards\" src=\"images/cards/" . $cards[$i] ." \" style=\"width:200px; height:250px;\"></li>";
+        }
+      }
+    ?>
 </ul>
 
 <h2>Yu-Gi-Oh!</h2>
 <ul class="tcgCards_category"> <!-- Yu-Gi-Oh! -->
-  <li><img class="tcgCards_image" src="images\categories\yu-gi-oh!\card1.jpg" style="width:200px; height:250px;"></li>
-  <li><img class="tcgCards_image" src="images\categories\yu-gi-oh!\card2.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image" src="images\categories\yu-gi-oh!\card3.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image" src="images\categories\yu-gi-oh!\card4.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image" src="images\categories\yu-gi-oh!\card5.jpg" style="width:200px; height:250px;"></li>
+<?php
+      for ($i=0; $i < count($cards); $i+=4) {
+        if (substr($cards[$i],0,1) == 'y'&& $cards[$i+3] != 'T') { //Checking to see that it's in the right category
+          echo "<li><a style=\"text-decoration:none;\" href=\"display_tcg.php?id=" . $cards[$i+1] . "\"><p style =\"text-align:center;\">" . $cards[$i+2] . "</p><img class=\"tcgCards\" src=\"images/cards/" . $cards[$i] ." \" style=\"width:200px; height:250px;\"></li>";
+        }
+      }
+    ?>
 </ul>
 
 <h2>Pokeman</h2>
 <ul class="tcgCards_category"> <!-- Pokeman -->
-  <li><img class="tcgCards_image1" src="images\categories\pokeman\card1.jpg" style="width:200px; height:250px;"></li>
-  <li><img class="tcgCards_image2" src="images\categories\pokeman\card2.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image3" src="images\categories\pokeman\card3.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image4" src="images\categories\pokeman\card4.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image5" src="images\categories\pokeman\card5.jpg" style="width:200px; height:250px;"></li>
+<?php
+      for ($i=0; $i < count($cards); $i+=4) {
+        if (substr($cards[$i],0,1) == 'p' && $cards[$i+3] != 'T') { //Checking to see that it's in the right category
+          echo "<li><a style=\"text-decoration:none;\" href=\"display_tcg.php?id=" . $cards[$i+1] . "\"><p style =\"text-align:center;\">" . $cards[$i+2] . "</p><img class=\"tcgCards\" src=\"images/cards/" . $cards[$i] ." \" style=\"width:200px; height:250px;\"></li>";
+        }
+      }
+    ?>
 </ul>
 
 <h2>Cardfight</h2>
 <ul class="tcgCards_category"> <!-- Cardfight -->
-  <li><img class="tcgCards_image1" src="images\categories\cardfight\card1.jpg" style="width:200px; height:250px;"></li>
-  <li><img class="tcgCards_image2" src="images\categories\cardfight\card2.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image3" src="images\categories\cardfight\card3.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image4" src="images\categories\cardfight\card4.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image5" src="images\categories\cardfight\card5.jpg" style="width:200px; height:250px;"></li>
+<?php
+      for ($i=0; $i < count($cards); $i+=4) {
+        if (substr($cards[$i],0,1) == 'c' && $cards[$i+3] != 'T') { //Checking to see that it's in the right category
+          echo "<li><a style=\"text-decoration:none;\" href=\"display_tcg.php?id=" . $cards[$i+1] . "\"><p style =\"text-align:center;\">" . $cards[$i+2] . "</p><img class=\"tcgCards\" src=\"images/cards/" . $cards[$i] ." \" style=\"width:200px; height:250px;\"></li>";
+        }
+      }
+    ?>
 </ul>
 
 <h2>Dragon Ball Super</h2>
 <ul class="tcgCards_category"> <!-- Dragon Ball Super -->
-  <li><img class="tcgCards_image1" src="images\categories\dragon ball super\card1.jpg" style="width:200px; height:250px;"></li>
-  <li><img class="tcgCards_image2" src="images\categories\dragon ball super\card2.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image3" src="images\categories\dragon ball super\card3.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image4" src="images\categories\dragon ball super\card4.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image5" src="images\categories\dragon ball super\card5.jpg" style="width:200px; height:250px;"></li>
+<?php
+      for ($i=0; $i < count($cards); $i+=4) {
+        if (substr($cards[$i],0,1) == 'd' && $cards[$i+3] != 'T') { //Checking to see that it's in the right category
+          echo "<li><a style=\"text-decoration:none;\" href=\"display_tcg.php?id=" . $cards[$i+1] . "\"><p style =\"text-align:center;\">" . $cards[$i+2] . "</p><img class=\"tcgCards\" src=\"images/cards/" . $cards[$i] ." \" style=\"width:200px; height:250px;\"></li>";
+        }
+      }
+    ?>
 </ul>
 
 <h2>Fresh and Blood</h2>
 <ul class="tcgCards_category"> <!-- Fresh and Blood -->
-  <li><img class="tcgCards_image1" src="images\categories\fresh and blood\card1.jpg" style="width:200px; height:250px;"></li>
-  <li><img class="tcgCards_image2" src="images\categories\fresh and blood\card2.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image3" src="images\categories\fresh and blood\card3.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image4" src="images\categories\fresh and blood\card4.jpg" style="width:200px; height:250px;"></li>  
-  <li><img class="tcgCards_image5" src="images\categories\fresh and blood\card5.jpg" style="width:200px; height:250px;"></li>
+<?php
+      for ($i=0; $i < count($cards); $i+=4) {
+        if (substr($cards[$i],0,1) == 'f' && $cards[$i+3] != 'T') { //Checking to see that it's in the right category
+          echo "<li><a style=\"text-decoration:none;\" href=\"display_tcg.php?id=" . $cards[$i+1] . "\"><p style =\"text-align:center;\">" . $cards[$i+2] . "</p><img class=\"tcgCards\" src=\"images/cards/" . $cards[$i] ." \" style=\"width:200px; height:250px;\"></li>";
+        }
+      }
+    ?>
 </ul>
 </section>
 

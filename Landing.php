@@ -32,7 +32,7 @@
 <main>
   <?php //Displaying all the products
     $cards = array(); //To store the picture file paths or the cards
-    
+
     require_once("config.php");
     // make connection to database
     $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
@@ -68,7 +68,7 @@
         if (substr($cards[$i],0,1) == 'm' && $cards[$i+3] != 'T') { //Checking to see that it's in the right category
           echo "<li><a style=\"text-decoration:none;\" href=\"display_tcg.php?id=" . $cards[$i+1] . "\"><p style =\"text-align:center;\">" . $cards[$i+2] . "</p><img class=\"tcgCards\" src=\"images/cards/" . $cards[$i] ." \" style=\"width:200px; height:250px;\"></li>";
         }
-      }
+      } 
     ?>
 </ul>
 

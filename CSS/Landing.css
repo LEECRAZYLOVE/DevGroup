@@ -35,6 +35,34 @@ body{
   } 
   /*End of global navigation section*/
 
+  /*Start categories styling section*/
+  .filter_labels {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      position: sticky;
+    }
+    
+    .filter_labels li {
+      float: left;
+      margin-left: 10px;
+      background-color: lightcyan;
+    }
+    
+    .filter_labels li a {
+      display: block;
+      text-align: center;
+      padding: 20px 22px;
+      text-decoration: none;
+    }
+    
+    .filter_labels li a:hover:not(.active) {
+      background-color: darkcyan;
+      color: lightcyan;
+    } 
+  /*End of categories styling section
+
   /*Start of main styling section*/
   h2 {
     color: darkcyan;

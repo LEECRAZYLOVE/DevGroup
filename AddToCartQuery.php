@@ -12,7 +12,7 @@ $currentuser = $_COOKIE['user'];
 
 //add appropriate fields
 require_once("config.php");
-$currentcart = $_REQUEST['id'];
+$currentcart = $_COOKIE['cart'];
 
     //connecting to the database
     $connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)

@@ -32,6 +32,7 @@
 <?php //Viewing Profile Details
 
     $currentuser = $_COOKIE["user"];
+    
     require_once("config.php");
     //connecting to the database
     $connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
@@ -47,7 +48,6 @@
       $firstname = $row['FirstName'];
       $lastname =  $row['LastName'];
       $username = $row['Username'];   
-      //echo "<h3>" ."Welcome ". $row['firstName'] . " " . $row['lastName'] ."!". "</h3>". "<br>";
     }   
     //close connection to the database
     mysqli_close($connect);

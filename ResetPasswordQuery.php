@@ -6,6 +6,9 @@
 </head>
 <body>
 <?php 
+
+    $currentuser = $_COOKIE['user'];
+
     //$client_id = $_REQUEST['clientId'];
     $password = $_REQUEST['password'];
     $rpassword = $_REQUEST['rpassword'];
@@ -23,7 +26,7 @@
 
     // query instructions 
     $query = "UPDATE user SET Password = '$password'
-                WHERE USER_ID = \"Will5471\"";
+                WHERE USER_ID = '$currentuser'";
 
     $result = mysqli_query($connect, $query)
                 or die("<strong style = \"color : red; \"> Could not execute query! </strong>");

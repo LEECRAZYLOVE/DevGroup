@@ -6,6 +6,7 @@
   <body>
 
   <?php
+    $currentuser = $_COOKIE["user"];
 
     //this page will be used to add client information when they sign up to the dabatase
     $street = $_REQUEST['street'];
@@ -20,7 +21,7 @@
 
     // query instructions 
     $query = "INSERT INTO address(User_ID, Street, City, Province, PostalCode) 
-              VALUES ('Leet5471', '$street',  '$city' ,'$province','$postcode')";
+              VALUES ('$currentuser', '$street',  '$city' ,'$province','$postcode')";
 
     $result = mysqli_query($connect, $query)
                 or die("<strong style = \"color : red; \"> Could not execute query! </strong>");

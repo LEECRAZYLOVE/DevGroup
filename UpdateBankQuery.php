@@ -6,6 +6,7 @@
   <body>
 
   <?php
+      $currentuser = $_COOKIE["user"];
 
     //this page will be used to add client information when they sign up to the dabatase
     $bank = $_REQUEST['bank'];
@@ -19,7 +20,7 @@
 
     // query instructions 
     $query = "INSERT INTO eft(Buyer_ID, BankName, AccountNum, BranchCode) 
-              VALUES ('Leet5471', '$bank',  '$account' ,'$branch')";
+              VALUES ('$currentuser', '$bank',  '$account' ,'$branch')";
 
     $result = mysqli_query($connect, $query)
                 or die("<strong style = \"color : red; \"> Could not execute query! </strong>");

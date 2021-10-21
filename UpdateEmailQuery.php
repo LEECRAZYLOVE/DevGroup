@@ -6,6 +6,9 @@
 <body>
 
 <?php
+
+$currentuser = $_COOKIE["user"];
+
 //add appropriate fields
 
     require_once("config.php");
@@ -18,7 +21,7 @@
 
     // query instructions 
     $query = "UPDATE user SET Email = '$email'
-                WHERE USER_ID = \"Will5471\"";
+                WHERE USER_ID = '$currentuser'";
 
     $result = mysqli_query($connect, $query)
                 or die("<strong style = \"color : red; \"> Could not execute query! </strong>");

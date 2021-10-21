@@ -51,6 +51,7 @@
                 echo "<td>".$row['Order_ID']."</td>";
                 echo "<td>".$row['Status']."</td>";              
                 echo "<td>".$row['TotalPrice']."</td>";
+                echo "</tr>";
           
             }
 

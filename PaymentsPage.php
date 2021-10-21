@@ -131,18 +131,57 @@
         <table>
           <tr>
             <td class="title">
-              <img src="https://www.sparksuite.com/images/logo.png" style="width: 100%; max-width: 300px" />
+              <img src="images/wallet.png" style="width: 100%; max-width: 300px" />
             </td>
 
             <td>
-              Invoice #: 123<br />
+              <!-- Invoice #: 123<br />
               Created: January 1, 2015<br />
               Due: February 1, 2015
             </td>
           </tr>
         </table>
       </td>
-    </tr>
+    </tr> -->
+
+    <!-- php for table start -->
+    <?php 
+        //database credentials
+        require_once("config.php");
+        //connect
+        $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
+            or die("could not connect to database");
+        
+        //issue query instructions
+        $query = "SELECT * FROM tcg_order";
+        $result = mysqli_query($conn, $query) or die("could not retrieve data!");
+
+        //Table headings
+            echo "<table width=\"80%\" border=0>
+                <tr style=\"background-color: #428bca;\">
+                    <td>Order ID</td>
+                    <td>Status</td>
+                    <td>Total Price</td>
+                </tr>";
+        //table content
+            while ($row = mysqli_fetch_array($result))
+             {
+                echo "<tr>";
+                echo "<td>".$row['Order_ID']."</td>";
+                echo "<td>".$row['Status']."</td>";              
+                echo "<td>".$row['TotalPrice']."</td>";
+                echo "</tr>";
+          
+            }
+
+        echo "</table>";
+        //close connection
+        mysqli_close($conn);    
+    
+    ?>
+
+    <!-- php for table end -->
+
 
     <tr class="information">
       <td colspan="2">

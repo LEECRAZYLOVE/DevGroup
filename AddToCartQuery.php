@@ -10,7 +10,7 @@ $currentuser = $_COOKIE['user'];
 
 //add appropriate fields
 require_once("config.php");
-$currentcart = $_COOKIE['cart'];
+// $currentcart = $_COOKIE['cart'];
 
     //connecting to the database
     $connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
@@ -30,8 +30,8 @@ $currentcart = $_COOKIE['cart'];
 
     echo $currentuser;
     // query instructions 
-    $query =  "INSERT INTO cart_item (Cart_ID, TCG_ID, Buyer_ID, Price)
-                VALUES ('$currentcart', '$tcgid', '$currentuser', '$price')";
+    $query =  "INSERT INTO cart_item (TCG_ID, Buyer_ID, Price)
+                VALUES ('$tcgid', '$currentuser', '$price')";
 
     $result = mysqli_query($connect, $query)
                 or die("<strong style = \"color : red; \"> Could not execute query! </strong>");
@@ -41,7 +41,7 @@ $currentcart = $_COOKIE['cart'];
     echo '<script> 
             alert("Item added to cart.");
             window.location.href="Display_tcg.php";
-            </script>'; //Alerts te he user redirects back to account pag  
+            </script>'; //Alerts the user redirects back to account page   
 ?>
 </body> 
 

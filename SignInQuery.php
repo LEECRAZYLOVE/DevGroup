@@ -23,14 +23,10 @@ mysqli_close($conn);
 
 
 if ($password== $currentPassword) {
+    header("Location:homegeneral.php?id=" . $currentuser);
 //redirecting to the home page once successful
-echo '<script> 
-window.location.href="HomeGeneral.php?id= <?php echo $currentuser; ?>";
-</script>'; //Alerts the user redirects back to account page   
 } else {
     echo "Incorrect password and username combination";
     //exit();
 }
-
-
 ?>

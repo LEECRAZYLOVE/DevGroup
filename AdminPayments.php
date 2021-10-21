@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<?php
-$currentuser = $_REQUEST['id'];
-setcookie('user', $currentuser, time()+86400, "/");
-?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,9 +8,7 @@ setcookie('user', $currentuser, time()+86400, "/");
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Itim">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="CSS\Landing.css">   
-    <title>Home</title>   
-  </head>
-
+</head>
 <body>
 <!--Start of the global navigation section-->
 <header>
@@ -32,21 +26,18 @@ setcookie('user', $currentuser, time()+86400, "/");
 <!--End of the global navigation section-->
 
 <main>
-<!--Start of the HTML filter component -->
-<h2>Filter</h2>
-<ul class = "filter_labels">
-  <li><a href="showall.php?id=showall"> Show all</a></li>
-  <li><a href="magic.php?id=magic"> Magic</a></li>
-  <li><a href="yugioh.php?id=yugioh"> Yu-Gi-Oh!</a></li>
-  <li><a href="pokemon.php?id=pokemon"> Pokemon</a></li>
-  <li><a href="cardfight.php?id=cardfight"> Cardfight</a></li>
-  <li><a href="dragonball.php?id=dragonball"> Dragon Ball Super</a></li>
- <li><a href="fleshandblood.php?id=fleshblood"> Flesh and Blood</a></li>
-</ul>
-<br>
-<h2><?php echo $currentuser;?></h2>
-<h2><?php echo $_COOKIE['user'];?></h2>
 </main>
- 
+
+<!--Just a footer for profesionalism-->
+<footer>
+    <p>&copy; 2021 NameOfStore.&nbsp;&nbsp; All Rights Reserved. &nbsp;&nbsp;Proudly created by
+        NameOfStore
+    </p>
+    <p>
+        <small>Last modified:
+            <time>14 October 2021</time>
+        </small>
+    </p>
+</footer>
 </body>
 </html>

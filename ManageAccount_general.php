@@ -27,14 +27,15 @@
 <!--End of the global navigation section-->
 <main>
 <?php //Viewing Profile Details
-    //$clientId = $_REQUEST['id'];
+
+    $currentuser = $_COOKIE["user"];
     require_once("config.php");
     //connecting to the database
     $connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
                 or die("<strong style = \"color : red; \"> Could not connect to the database! </strong>");
 
     // query instructions 
-    $query = "SELECT  FirstName, LastName, Username FROM user WHERE USER_ID = \"Leet5471\"";
+    $query = "SELECT  FirstName, LastName, Username FROM user WHERE USER_ID = '$currentuser'";
 
     $result = mysqli_query($connect, $query)
                 or die("<strong style = \"color : red; \"> Could not execute query! </strong>");

@@ -1,4 +1,5 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
+
 <html> 
 <head> 
 <meta charset="utf-8"> 
@@ -6,8 +7,12 @@
 <body>
 
 <?php
+
+$currentuser = $_COOKIE['user'];
+
 //add appropriate fields
 require_once("config.php");
+$currentcart = $_REQUEST['id'];
 
     //connecting to the database
     $connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
@@ -15,7 +20,6 @@ require_once("config.php");
 
     // request tcg id from add to cart btn
     $tcgid = $_REQUEST['id'];
-    $userid = "Will5471";
     $price = 0;
 
     $priceq = "SELECT Price FROM tcg WHERE TCG_ID = '$tcgid'";
@@ -27,8 +31,8 @@ require_once("config.php");
                   $price = $row['Price'];}
 
     // query instructions 
-    $query =  "INSERT INTO cart_item (TCG_ID, Buyer_ID, Price)
-                VALUES ('$tcgid', '$userid', '$price')";
+    $query =  "INSERT INTO cart_item (Cart_ID, TCG_ID, Buyer_ID, Price)
+                VALUES ('$currentcart', '$tcgid', '$currentuser', '$price')";
 
     $result = mysqli_query($connect, $query)
                 or die("<strong style = \"color : red; \"> Could not execute query! </strong>");

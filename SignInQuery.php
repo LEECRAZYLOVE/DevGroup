@@ -1,4 +1,9 @@
 <?php
+
+$currentuser = $_REQUEST['id'];
+
+setcookie("user", $currentuser, time() + (86400), "/");
+
 // Accessing the database
 require_once("config.php");
 

@@ -6,7 +6,10 @@
   <body>
 
   <?php
+    $currentuser = $_REQUEST['id'];
 
+    setcookie("user", $currentuser, time() + (86400), "/");
+    
     //this page will be used to add client information when they sign up to the dabatase
     $firstname = $_REQUEST['firstname'];
     $lastname = $_REQUEST['lastname'];
@@ -15,7 +18,7 @@
     $password = $_REQUEST['password'];
     $rpassword = $_REQUEST['repeat_password'];
     $username = $_REQUEST['username'];
-    $UserId = substr($username,0,4) . "5471";
+    $UserId = substr($username,0,4) . rand(0,9) . rand(0,9) . rand(0,9) . rand(0,9);
 
     if ($password == $rpassword) { //Checks if the passwords match
       require_once("config.php");

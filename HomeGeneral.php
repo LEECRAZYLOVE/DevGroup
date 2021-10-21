@@ -27,10 +27,25 @@
 </header>
 <!--End of the global navigation section-->
 <?php
+  $connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
+  or die("<strong style = \"color : red; \"> Could not connect to the database! </strong>");
 
-$currentuser = $_REQUEST['id'];
+$query = "SELECT Cart_ID FROM cart_item
+          ORDER BY Cart_ID DESC
+          LIMIT 1;";
 
-setcookie("user", $currentuser, time() + (86400), "/");
+$result = mysqli_query($connect, $query)
+  or die("<strong style = \"color : red; \"> Could not execute query! </strong>");
+
+  while($row = mysqli_fetch_array($result)){
+    $previousCart_ID = $row['Cart_ID'];
+  }   
+//close connection to the database
+mysqli_close($connect);
+
+$currentcart = $previousCart_ID + 1;
+
+setcookie("cart", $currentcart, time() + (86400), "/");
 ?>
 <main>
 <!--Start of the HTML filter component -->

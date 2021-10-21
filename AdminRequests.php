@@ -26,6 +26,63 @@
 <!--End of the global navigation section-->
 
 <main>
+<?php
+              // add the database credentials
+              require_once("config.php");
+              // make connection to database
+              $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
+                  or die("ERROR: unable to connect to database!");
+              // issue query instructions
+              $query = "SELECT * FROM sell_request";
+              $result = mysqli_query($conn, $query) or die("ERROR: unable to execute query!");
+              // start table
+              echo "<table width=\"80%\" border=0>
+                      <tr bgcolor=\"#428bca\">
+                      <td>Picture</td>
+                      <td>Request_ID</td>
+                      <td>Card_Name</td>
+                      <td>Category</td>
+                      <td>Set_Name</td>
+                      <td>Card_Type</td>
+                      <td>Rarity</td>
+                      <td>Colour</td>
+                      <td>Nation</td>
+                      <td>Grade</td>
+                      <td>Skill_Icon</td>
+                      <td>Character</td>
+                      <td>Era</td>
+                      <td></td>
+                      <td>Sub_Type</td>
+                      <td>Class</td>
+                      <td>Age</td>
+                      <td>Description</td>
+                      <td>Price</td>
+                      <td>Seller_ID</td>
+                      <td>Quality</td>
+                      <td colspan=\"2\"></td>
+                      </tr>";
+              // populate table rows with data from database
+              while ($row = mysqli_fetch_array($result)) {
+                  echo "<tr>";
+                  echo "<td>" . "<img src=\"Images/Cards/" . $row['Picture'] . "\" width=\"100\">" . "</td>";
+                  echo "<td>" . $row['Name'] . "</td>";
+                  echo "<td>" . $row['Description'] . "</td>";
+                  echo "<td>" . $row['Quality'] . "/5</td>";
+                  echo "<td>" . $row['Year'] . "</td>";
+                  echo "<td>R" . $row['Price'] . "</td>";
+                  echo "<td>" . "<a href=\"Display_tcg.php?id=" . $row['TCG_ID'] . "\"><input type=\"button\" value=\"View\"></a>" . "</td>";
+                  echo "<td>" . "<a href=\"delete.php?id=" . $row['TGC_ID'] . "\"><input type=\"button\" value=\"Add to Cart\"></a>" . "</td>";
+                  echo "</tr>";
+              }
+              // end table
+              echo "</table>";
+              // close the connection to database
+              mysqli_close($conn);
+            ?>
+              </fieldset>
+    
+    <!-- end product -->
+
 </main>
 
 <!--Just a footer for profesionalism-->

@@ -57,13 +57,16 @@
 </header>
 <!--End of the global navigation section-->
 
-    <form action="" method="">
-            
-        Card Name: <br><input class="textbox" id="card_name" type="text" name="name"><br>
+<h1>Sell Request:</h1>
+
+    <form action="Sell_Request_Query.php" method="post">
+        
+    <br><input class="textbox" id="seller_id" type="text" name="sellerid" placeholder="seller id here(will be hidden)"><br>
+
+        Card Name: <br><input class="textbox" id="card_name" type="text" name="name" required><br>
             
         <label for="category">Category:</label>
-        <br><select name="category" id="cat">
-
+        <br><select name="category" id="cat" required>
             <option disabled selected value> -- select an option -- </option>
             <option value="magic">Magic</option>
             <option value="yugioh">Yu-Gi-Oh!</option>
@@ -71,7 +74,6 @@
             <option value="cardfight">Cardfight</option>
             <option value="dragonBallSuper">Dragon Ball Super</option>
             <option value="fleshAndBlood">Flesh and Blood</option>
-
         </select><br>
 
         <div class="magic box">
@@ -99,7 +101,6 @@
         <input class="textbox" type="text" name="nation" placeholder="Nation"><br>
         <input class="textbox" type="text" name="grade" placeholder="Grade"><br>
         <input class="textbox" type="text" name="skillicon" placeholder="Skill Icon"><br>
-
         </div>
 
         <div class="dragonBallSuper box">
@@ -116,18 +117,18 @@
         <input class="textbox" type="text" name="cardtype" placeholder="Card Type"><br>
         <input class="textbox" type="text" name="rarity" placeholder="Rarity"><br>
         <input class="textbox" type="text" name="subtype" placeholder="Sub-Type"><br>
-        <input class="textbox" type="text" name="class" placeholder="Class"><br>
+        <input class="textbox" type="text" name="class" placeholder="Class" ><br>
         </div>
-            
-        Condition: <br>
-        <input class="textbox" type="" name="condition"><br>
-            
+
         Age (Year manufactured): <br>
-        <input class="textbox" type="number" min="1900" max="2099" step="1" value="2021" name="age"><br>
+        <input class="textbox" type="number" min="1900" max="2022" step="1" value="" name="age" required><br>
             
         Description: <br>
-        <textarea type="text" name="description" cols="40"></textarea><br>
-            
+        <textarea type="text" name="description" cols="40" required></textarea><br>
+        
+        Price: <br>
+        <input type="number" id="price" name="price" min="1" step="any" required><br>
+
         Images: <br>
         <input type="file" id="img" name="image" accept="image/*"><br>
 

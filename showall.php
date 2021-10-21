@@ -30,27 +30,27 @@
 <main>
 <!--Start of the HTML filter component -->
 <?php //Retrieving all the products
-    // $cards = array(); //To store the picture file paths or the cards
+    $cards = array(); //To store the picture file paths or the cards
     
-    // require_once("config.php");
-    // // make connection to database
-    // $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
-    //     or die("ERROR: unable to connect to database!");
-    // // issue query instructions
-    // $query = "SELECT Picture, Name, TCG_ID, Alternative FROM tcg";
-    // $result = mysqli_query($conn, $query) or die("ERROR: unable to execute query!");
+    require_once("config.php");
+    // make connection to database
+    $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
+        or die("ERROR: unable to connect to database!");
+    // issue query instructions
+    $query = "SELECT Picture, Name, TCG_ID, Alternative FROM tcg";
+    $result = mysqli_query($conn, $query) or die("ERROR: unable to execute query!");
 
-    // $i = 0;
-    // while ($row = mysqli_fetch_array($result)) {
-    //   $cards[$i] = $row["Picture"];
-    //   $cards[$i+1] = $row["TCG_ID"];
-    //   $cards[$i+2] = $row["Name"];  
-    //   $cards[$i+3] = $row["Alternative"]; 
-    //   $i+=4; 
-    // }
+    $i = 0;
+    while ($row = mysqli_fetch_array($result)) {
+      $cards[$i] = $row["Picture"];
+      $cards[$i+1] = $row["TCG_ID"];
+      $cards[$i+2] = $row["Name"];  
+      $cards[$i+3] = $row["Alternative"]; 
+      $i+=4; 
+    }
 
-    // // close the connection to database
-    // mysqli_close($conn);
+    // close the connection to database
+    mysqli_close($conn);
 ?>
 
 <h2>Filter</h2>
@@ -58,7 +58,7 @@
   <li><a href="showall.php?id=showall"> Show all</a></li>
   <li><a href="magic.php?id=magic"> Magic</a></li>
   <li><a href="yugioh.php?id=yugioh"> Yu-Gi-Oh!</a></li>
-  <li><a href="pokeman.php?id=pokeman"> Pokemon</a></li>
+  <li><a href="pokemon.php?id=pokemon"> Pokemon</a></li>
   <li><a href="cardfight.php?id=cardfight"> Cardfight</a></li>
   <li><a href="dragonball.php?id=dragonball"> Dragon Ball Super</a></li>
  <li><a href="fleshblood.php?id=fleshblood"> Flesh and Blood</a></li>

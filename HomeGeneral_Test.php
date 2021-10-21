@@ -34,7 +34,7 @@
   <li><a href="showall.php?id=showall"> Show all</a></li>
   <li><a href="magic.php?id=magic"> Magic</a></li>
   <li><a href="yugioh.php?id=yugioh"> Yu-Gi-Oh!</a></li>
-  <li><a href="pokeman.php?id=pokeman"> Pokemon</a></li>
+  <li><a href="pokemon.php?id=pokemon"> Pokemon</a></li>
   <li><a href="cardfight.php?id=cardfight"> Cardfight</a></li>
   <li><a href="dragonball.php?id=dragonball"> Dragon Ball Super</a></li>
  <li><a href="fleshandblood.php?id=fleshblood"> Flesh and Blood</a></li>

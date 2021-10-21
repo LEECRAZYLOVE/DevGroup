@@ -16,8 +16,8 @@
     <!--Start of header_labels-->
     <div class = "global_nav">
     <ul class = "header_labels"> <!--Might have to change this class name when we get to CSS-->
-      <li> <a href="HomeGeneral.php"><img id="logo" src="images/logo.png" alt="Store logo" style="text-align:center; width:140px; height:80px;"> </li>
-      <li> <a href="ManageAccount_general.php"><img id ="ManageAccount" src="images/user-icon.png" alt="manageaccount" style="width:50px; height:50px;"> </li>
+      <li> <a href="HomeGeneral.php"><img id="logo" src="images/logo.png" alt="Store logo" style="text-align:left; width:140px; height:80px;"> </li>
+      <li> <a href="ManageAccount_general.php"><img id ="ManageAccount" src="images/user-icon.png" alt="manageaccount" style="text-align:right; width:50px; height:50px;"> </li>
     </ul>
     </div>
     <!--End header_labels--> 
@@ -39,7 +39,6 @@
               echo "<table width=\"80%\" border=0>
                       <tr bgcolor=\"#428bca\">
                       <td>Picture</td>
-                      <td>Request_ID</td>
                       <td>Card_Name</td>
                       <td>Category</td>
                       <td>Set_Name</td>
@@ -49,16 +48,12 @@
                       <td>Nation</td>
                       <td>Grade</td>
                       <td>Skill_Icon</td>
-                      <td>Character</td>
-                      <td>Era</td>
-                      <td></td>
                       <td>Sub_Type</td>
                       <td>Class</td>
                       <td>Age</td>
                       <td>Description</td>
                       <td>Price</td>
                       <td>Seller_ID</td>
-                      <td>Quality</td>
                       <td colspan=\"2\"></td>
                       </tr>";
               // populate table rows with data from database
@@ -70,8 +65,8 @@
                   echo "<td>" . $row['Quality'] . "/5</td>";
                   echo "<td>" . $row['Year'] . "</td>";
                   echo "<td>R" . $row['Price'] . "</td>";
-                  echo "<td>" . "<a href=\"Display_tcg.php?id=" . $row['TCG_ID'] . "\"><input type=\"button\" value=\"View\"></a>" . "</td>";
-                  echo "<td>" . "<a href=\"delete.php?id=" . $row['TGC_ID'] . "\"><input type=\"button\" value=\"Add to Cart\"></a>" . "</td>";
+                  // echo "<td>" . "<a href=\"Display_tcg.php?id=" . $row['TCG_ID'] . "\"><input type=\"button\" value=\"D\"></a>" . "</td>";   //I want these to be a and d buttons
+                  // echo "<td>" . "<a href=\"delete.php?id=" . $row['TGC_ID'] . "\"><input type=\"button\" value=\"A\"></a>" . "</td>";
                   echo "</tr>";
               }
               // end table

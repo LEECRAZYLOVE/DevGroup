@@ -6,9 +6,7 @@
   <body>
 
   <?php
-    $currentuser = $_REQUEST['id'];
 
-    setcookie("user", $currentuser, time() + (86400), "/");
     
     //this page will be used to add client information when they sign up to the dabatase
     $firstname = $_REQUEST['firstname'];
@@ -37,11 +35,15 @@
     mysqli_close($connect);
     
     //redirecting to the home page once successful
-    header("Location:HomeGeneral.php");
+    echo '<script> 
+    window.location.href="HomeGeneral.php?id= <?php echo $currentuser; ?> ";
+    </script>';
     } 
     else {
     //redirecting to the sign up page once unsuccessful
-    header("Location:SignUp.php"); //Takes the user back to sign up page
+    echo '<script> 
+    window.location.href="SignUp.php";
+    </script>';
     echo "<strong style = \"color : red; \"> Passwords do not match. </strong>"; //Lets the user know why sign up failed
   }  
   ?> 

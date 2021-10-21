@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+setcookie('user', $currentuser, time()+86400, "/");
+setcookie('cart', $currentcart, time() + (86400), "/");
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -27,10 +31,12 @@
 </header>
 <!--End of the global navigation section-->
 <?php
+require_once('config.php');
+
   $connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
   or die("<strong style = \"color : red; \"> Could not connect to the database! </strong>");
 
-$query = "SELECT Cart_ID FROM cart_item
+$query = "SELECT Cart_ID FROM cart
           ORDER BY Cart_ID DESC
           LIMIT 1;";
 
@@ -43,10 +49,10 @@ $result = mysqli_query($connect, $query)
 //close connection to the database
 mysqli_close($connect);
 
+$currentuser = $_REQUEST['id'];
 $currentcart = $previousCart_ID + 1;
-
-setcookie("cart", $currentcart, time() + (86400), "/");
 ?>
+
 <main>
 <!--Start of the HTML filter component -->
 <h2>Filter</h2>

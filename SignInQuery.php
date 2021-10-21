@@ -1,8 +1,5 @@
 <?php
 
-$currentuser = $_REQUEST['id'];
-
-setcookie("user", $currentuser, time() + (86400), "/");
 
 // Accessing the database
 require_once("config.php");
@@ -20,16 +17,18 @@ $result = mysqli_query($conn, $query)
 
 while($row = mysqli_fetch_array($result))
 {
-    $password = $row['password'];
+    $password = $row['Password'];
     $currentuser = $row['User_ID'];
 }
 mysqli_close($conn); 
 
 if ($password== $currentPassword) {
 //redirecting to the home page once successful
-header("Location:HomeGeneral.php?id=$currentuser");
+echo '<script> 
+window.location.href="HomeGeneral.php?id= <?php echo $currentuser; ?> ";
+</script>'; //Alerts the user redirects back to account page   
 } else {
-    echo "Incorrect password username combination";
+    echo "Incorrect password and username combination";
     //exit();
 }
 

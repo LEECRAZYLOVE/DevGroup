@@ -1,12 +1,12 @@
 body{
-    background-color: black;
+    background-color: whitesmoke;
 }
 
 /*main:after {
     content: "";
     display: table;
     clear: both;
-  }*/
+  }
 
 /*Start the global navigation styling section*/
 .header_labels {
@@ -16,6 +16,7 @@ body{
     overflow: hidden;
     background-color: darkcyan;
   }
+
   
   .header_labels li {
     float: left;
@@ -40,7 +41,6 @@ body{
       margin: 0;
       padding: 0;
       overflow: hidden;
-      position: sticky;
     }
     
     .filter_labels li {

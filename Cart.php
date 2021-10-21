@@ -110,9 +110,9 @@
     </div>
  
     <div class="description">
-      <span>Maison Margiela</span>
-      <span>Future Sneakers</span>
-      <span>White</span>
+      <span>Payments</span>
+      <!-- <span>Future Sneakers</span>
+      <span>White</span> -->
     </div>
  
 
@@ -140,7 +140,7 @@ body {
 
 .shopping-cart {
   width: 750px;
-  height: 1100px;
+  height: auto;
   margin: 80px auto;
   background: #FFFFFF;
   box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
@@ -161,7 +161,7 @@ body {
  
 .item {
   padding: 20px 30px;
-  height: 600px;
+  height: auto;
   display: flex;
 }
  
@@ -201,7 +201,7 @@ body {
   position: absolute;
   top: 9px;
   left: 15px;
-  background: url('overall.png');
+  background: url('images/order.png');
   width: 60px;
   height: 60px;
   background-size: 2900%;

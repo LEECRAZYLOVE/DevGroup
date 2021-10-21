@@ -111,7 +111,7 @@ Year: <?php echo $year ?> <br> -->
                 <small>*includes Shipping</small>
                 </h3>
                 <div class="col-sm-12 col-md-6 col-lg-6">
-                        <button class="btn btn-white btn-default"><a href="javascript:void(0);" class="btn btn-success btn-lg">Add to cart</a></button> <br>
+                        <button class="btn btn-white btn-default"><a href="AddToCartQuery.php?id="<?php echo $selectedProduct?> class="btn btn-success btn-lg">Add to cart</a></button> <br>
                     </div>
 
                 <hr />

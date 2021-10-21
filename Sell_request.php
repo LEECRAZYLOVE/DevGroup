@@ -59,7 +59,7 @@
 
 <h1>Sell Request:</h1>
 
-    <form action="Sell_Request_Query.php" method="post" enctype="multipart/form-data">
+    <form action="Sell_Request_Query.php" method="post">
         
         Card Name: <br><input class="textbox" id="card_name" type="text" name="card_name" required><br>
             

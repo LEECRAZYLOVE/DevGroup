@@ -34,19 +34,29 @@
             or die("could not connect to database");
         
         //issue query instructions
-        $query = "SELECT * FROM boards";
+        $query = "SELECT * FROM tcg_order";
         $result = mysqli_query($conn, $query) or die("could not retrieve data!");
 
         //Table headings
-            echo "<table style=\"width: 80%;\">
-                <tr style=\background-color: #428bca;\">
+            echo '<table style=\"width: 80%;\">
+                <tr style=\"background-color: #428bca;\">
                     <td>Order ID</td>
                     <td>Status</td>
                     <td>Total Price</td>
-                </tr>"
+                </tr>';
+        //table content
+            while ($row = mysqli_fetch_array($result))
+             {
+                echo "<tr>";
+                echo "<td>".$row['Order_ID']."</td>";
+                echo "<td>".$row['Status']."</td>";              
+                echo "<td>".$row['TotalPrice']."</td>";
+          
+            }
 
+        echo "</table>";
         //close connection
-        // mysqli_close($conn);    
+        mysqli_close($conn);    
     
     ?>
 

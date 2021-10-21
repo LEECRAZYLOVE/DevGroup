@@ -7,6 +7,7 @@
 
 <?php
 //add appropriate fields
+require_once("config.php");
 
     //connecting to the database
     $connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
@@ -14,12 +15,20 @@
 
     // request tcg id from add to cart btn
     $tcgid = $_REQUEST['id'];
+    $userid = "Will5471";
+    $price = 0;
 
-    //implent user id request
+    $priceq = "SELECT Price FROM tcg WHERE TCG_ID = '$tcgid'";
+
+    $priceresult = mysqli_query($connect, $priceq)
+                or die("<strong style = \"color : red; \"> Could not execute query! </strong>");
+
+                while($row = mysqli_fetch_array($priceresult)){
+                  $price = $row['Price'];}
 
     // query instructions 
-    $query = "UPDATE cart_item SET TCG_ID = '$tcgid'
-                WHERE USER_ID = \"Will5471\"";
+    $query =  "INSERT INTO cart_item (TCG_ID, Buyer_ID, Price)
+                VALUES ('$tcgid', '$userid', '$price')";
 
     $result = mysqli_query($connect, $query)
                 or die("<strong style = \"color : red; \"> Could not execute query! </strong>");
@@ -27,8 +36,8 @@
     //close connection to the database
     mysqli_close($connect);
     echo '<script> 
-            alert("Your email was successfully updated!");
-            window.location.href="ManageAccount_general.php";
+            alert("Item added to cart.");
+            window.location.href="Display_tcg.php";
             </script>'; //Alerts the user redirects back to account page   
 ?>
 </body> 

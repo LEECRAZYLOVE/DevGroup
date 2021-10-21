@@ -38,12 +38,12 @@
         $result = mysqli_query($conn, $query) or die("could not retrieve data!");
 
         //Table headings
-            echo '<table style=\"width: 80%;\">
+            echo "<table width=\"80%\" border=0>
                 <tr style=\"background-color: #428bca;\">
                     <td>Order ID</td>
                     <td>Status</td>
                     <td>Total Price</td>
-                </tr>';
+                </tr>";
         //table content
             while ($row = mysqli_fetch_array($result))
              {

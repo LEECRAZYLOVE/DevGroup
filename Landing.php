@@ -128,55 +128,7 @@
 </ul>
 </section>
 
-<!-- js to make the horizontal scrolling feature-->
-<script>
-var myIndex = 0;
-slideshow();
 
-function slideshow() {
-  var i;
-  var v = document.getElementsByClassName("tcgCards_image1");
-  var w = document.getElementsByClassName("tcgCards_image2");
-  var x = document.getElementsByClassName("tcgCards_image3");
-  var y = document.getElementsByClassName("tcgCards_image4");
-  var z = document.getElementsByClassName("tcgCards_image5");
-  var a = document.getElementsByClassName("tcgCards_image6");
-  var b = document.getElementsByClassName("tcgCards_image7");
-  var c = document.getElementsByClassName("tcgCards_image8");
-  var d = document.getElementsByClassName("tcgCards_image9");
-  var e = document.getElementsByClassName("tcgCards_image10");
-  
-  for (i = 0; i < 5; i++) {
-    a[i].style.display = "none"; 
-    b[i].style.display = "none"; 
-    c[i].style.display = "none";  
-    d[i].style.display = "none";
-    e[i].style.display = "none";
-    v[i].style.display = "none"; 
-    w[i].style.display = "none"; 
-    x[i].style.display = "none"; 
-    y[i].style.display = "none"; 
-    z[i].style.display = "none"; 
-  }
-  myIndex++;
-  if (myIndex > 10) {myIndex = 1}  
-  v[myIndex-1].style.display = "block"; 
-  w[myIndex-1].style.display = "block";   
-  x[myIndex-1].style.display = "block";
-  y[myIndex-1].style.display = "block";  
-  z[myIndex-1].style.display = "block";
-  a[myIndex-1].style.display = "block";
-  b[myIndex-1].style.display = "block"; 
-  c[myIndex-1].style.display = "block"; 
-  d[myIndex-1].style.display = "block"; 
-  e[myIndex-1].style.display = "block"; 
-  setTimeout(slideshow, 4000); // Change image every 2 seconds
-}
-
-
-</script>
-</section>
-<!--End of categories Slideshow section-->
 
 <!--Start of lowersection-->
 <aside>

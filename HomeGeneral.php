@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+setcookie('user', $currentuser, time()+86400, "/");
+setcookie('cart', $currentcart, time() + (86400), "/");
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,11 +22,11 @@
     <!--Start of header_labels-->
     <div class = "global_nav">
     <ul class = "header_labels"> <!--Might have to change this class name when we get to CSS-->
-      <li style="float:center"> <a href="HomeGeneral.php"><img id="logo" src="images/TCGplayer-logo.png" alt="Store logo" style="text-align:center; width:140px; height:80px;"> </li>
-      <li style="float:right"> <a href="ManageAccount_general.php"><img id ="ManageAccount" src="images/user-icon.png" alt="manageaccount" style="width:50px; height:50px;"> </li>
-      <li style="float:right"> <a href="Landing.php"><img id ="logout" src="images/signout.png" alt="signout" style="width:50px; height:50px;"> </li>
-      <li style="float:right"> <a href="cart.php"><img id ="cart" src="images/shopping-cart.png" alt="cart" style="width:50px; height:50px;"> </li>
-      <li style="float:right"> <a href="cart.php"><img id ="cart" src="images/history.png" alt="cart" style="width:50px; height:50px;"> </li>
+      <li > <a href="HomeGeneral.php"><img  src="images/logo.png" alt="Store logo" style="text-align:center; width:140px; height:40px;"> </li>
+      <li > <a href="ManageAccount_general.php"><img src="images/user-icon.png" alt="manageaccount" style="width:50px; height:50px;"> </li>
+      <li > <a href="Landing.php"><img  src="images/signout.png" alt="signout" style="width:50px; height:50px;"> </li>
+      <li > <a href="cart.php"><img  src="images/shopping-cart.png" alt="cart" style="width:50px; height:50px;"> </li>
+      <li> <a href="cart.php"><img src="images/history.png" alt="cart" style="width:50px; height:50px;"> </li>
     </ul>
     </div>
     <!--End header_labels--> 
@@ -30,10 +34,12 @@
 </header>
 <!--End of the global navigation section-->
 <?php
+require_once('config.php');
+
   $connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
   or die("<strong style = \"color : red; \"> Could not connect to the database! </strong>");
 
-$query = "SELECT Cart_ID FROM cart_item
+$query = "SELECT Cart_ID FROM cart
           ORDER BY Cart_ID DESC
           LIMIT 1;";
 
@@ -46,10 +52,10 @@ $result = mysqli_query($connect, $query)
 //close connection to the database
 mysqli_close($connect);
 
+$currentuser = $_REQUEST['id'];
 $currentcart = $previousCart_ID + 1;
-
-setcookie("cart", $currentcart, time() + (86400), "/");
 ?>
+
 <main>
 <!--Start of the HTML filter component -->
 <h2>Filter</h2>

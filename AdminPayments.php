@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="CSS\Landing.css">   
 </head>
+
+
 <body>
 <!--Start of the global navigation section-->
 <header>
@@ -26,9 +28,65 @@
 <!--End of the global navigation section-->
 
 <main>
+
+<?php
+
+require_once("config.php");
+
+$connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
+                or die("<strong style = \"color : red; \"> Could not connect to the database! </strong>");
+
+$query = "SELECT tcg.Name AS Name,
+tcg.TCG_ID AS TCG_ID,
+tcg.NAME AS Card_Name,
+ tcg.Status AS Status,
+  tcg.Picture AS Picture, 
+  tcg.Price AS Price, 
+  user.Username AS Seller_Name
+  FROM tcg INNER JOIN user ON
+  tcg.Seller_ID=user.User_ID
+  WHERE tcg.Status = 'U'";
+
+$result = mysqli_query($connect, $query)
+                or die("<strong style = \"color : red; \"> Could not execute query! </strong>");
+
+                // while($row = mysqli_fetch_array($result)){
+                //   $price = $row['Price'];
+                //   $name = $row['Name'];
+                //   $picture = $row['Picture'];
+                //   $status = $row['Status'];
+                // }
+  // start table
+              echo "<table width=\"80%\" border=0>
+                      <tr bgcolor=\"#428bca\">
+                      <td>Picture</td>
+                      <td>Card Name</td>
+                      <td>Price</td>
+                      <td>Seller Name</td>
+                      <td></td>
+                      </tr>";
+              // populate table rows with data from database
+              while ($row = mysqli_fetch_array($result)) {
+                  echo "<tr>";
+                  echo "<td>" . "<img src=\"Images/Cards/" . $row['Picture'] . "\" width=\"100\">" . "</td>";
+                  echo "<td>" . $row['Card_Name'] . "</td>";
+                  echo "<td>R" . $row['Price'] . "</td>";
+                  echo "<td>" . $row['Seller_Name'] . "</td>";
+                  echo "<td>" . "<a href=\"PaidQuery.php?id=" . $row['TCG_ID'] . "\"><input type=\"button\" value=\"PAID\"></a>" . "</td>";
+                  echo "</tr>";
+              }
+              // end table
+              echo "</table>";
+              // close the connection to database
+
+mysqli_close($connect);
+
+
+?>
+
+
 </main>
 
-<!--Just a footer for profesionalism-->
 <footer>
     <p>&copy; 2021 NameOfStore.&nbsp;&nbsp; All Rights Reserved. &nbsp;&nbsp;Proudly created by
         NameOfStore

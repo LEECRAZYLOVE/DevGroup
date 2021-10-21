@@ -59,11 +59,11 @@
 
 <h1>Sell Request:</h1>
 
-    <form action="Sell_Request_Query.php" method="post">
+    <form action="Sell_Request_Query.php" method="post" enctype="multipart/form-data">
         
     <br><input class="textbox" id="seller_id" type="text" name="sellerid" placeholder="seller id here(will be hidden)"><br>
 
-        Card Name: <br><input class="textbox" id="card_name" type="text" name="name" required><br>
+        Card Name: <br><input class="textbox" id="card_name" type="text" name="card_name" required><br>
             
         <label for="category">Category:</label>
         <br><select name="category" id="cat" required>
@@ -122,7 +122,10 @@
 
         Age (Year manufactured): <br>
         <input class="textbox" type="number" min="1900" max="2022" step="1" value="" name="age" required><br>
-            
+        
+        Quality: <br>
+        <input class="textbox" type="number" min="0" max="5" step="1" value="" name="quality" required><br>
+                
         Description: <br>
         <textarea type="text" name="description" cols="40" required></textarea><br>
         

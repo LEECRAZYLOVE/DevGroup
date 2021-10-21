@@ -1,6 +1,4 @@
 <?php
-
-
 // Accessing the database
 require_once("config.php");
 
@@ -20,16 +18,19 @@ while($row = mysqli_fetch_array($result))
     $password = $row['Password'];
     $currentuser = $row['User_ID'];
 }
+  
 mysqli_close($conn); 
+
 
 if ($password== $currentPassword) {
 //redirecting to the home page once successful
 echo '<script> 
-window.location.href="HomeGeneral.php?id= <?php echo $currentuser; ?> ";
+window.location.href="HomeGeneral.php?id= <?php echo $currentuser; ?>";
 </script>'; //Alerts the user redirects back to account page   
 } else {
     echo "Incorrect password and username combination";
     //exit();
 }
+
 
 ?>

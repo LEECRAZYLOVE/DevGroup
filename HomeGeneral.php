@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
+$currentuser = $_REQUEST['id'];
 setcookie('user', $currentuser, time()+86400, "/");
-setcookie('cart', $currentcart, time() + (86400), "/");
 ?>
 <html lang="en">
 <head>
@@ -30,28 +30,6 @@ setcookie('cart', $currentcart, time() + (86400), "/");
   </nav>
 </header>
 <!--End of the global navigation section-->
-<?php
-require_once('config.php');
-
-  $connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
-  or die("<strong style = \"color : red; \"> Could not connect to the database! </strong>");
-
-$query = "SELECT Cart_ID FROM cart
-          ORDER BY Cart_ID DESC
-          LIMIT 1;";
-
-$result = mysqli_query($connect, $query)
-  or die("<strong style = \"color : red; \"> Could not execute query! </strong>");
-
-  while($row = mysqli_fetch_array($result)){
-    $previousCart_ID = $row['Cart_ID'];
-  }   
-//close connection to the database
-mysqli_close($connect);
-
-$currentuser = $_REQUEST['id'];
-$currentcart = $previousCart_ID + 1;
-?>
 
 <main>
 <!--Start of the HTML filter component -->
@@ -66,6 +44,8 @@ $currentcart = $previousCart_ID + 1;
  <li><a href="fleshandblood.php?id=fleshblood"> Flesh and Blood</a></li>
 </ul>
 <br>
+<h2><?php echo $currentuser;?></h2>
+<h2><?php echo $_COOKIE['user'];?></h2>
 </main>
 
 </body>

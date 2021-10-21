@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-
 <html> 
 <head> 
 <meta charset="utf-8"> 
 </head> 
 <body>
-
 <?php
 
 $currentuser = $_COOKIE['user'];
@@ -30,6 +28,7 @@ $currentcart = $_COOKIE['cart'];
                 while($row = mysqli_fetch_array($priceresult)){
                   $price = $row['Price'];}
 
+    echo $currentuser;
     // query instructions 
     $query =  "INSERT INTO cart_item (Cart_ID, TCG_ID, Buyer_ID, Price)
                 VALUES ('$currentcart', '$tcgid', '$currentuser', '$price')";
@@ -42,7 +41,7 @@ $currentcart = $_COOKIE['cart'];
     echo '<script> 
             alert("Item added to cart.");
             window.location.href="Display_tcg.php";
-            </script>'; //Alerts the user redirects back to account page   
+            </script>'; //Alerts te he user redirects back to account pag  
 ?>
 </body> 
 

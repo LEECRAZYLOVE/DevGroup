@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Courgette"> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Itim">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="CSS\Landing.css">  
-    <title>Yu-Gi-Oh!</title>    
+    <link rel="stylesheet" href="CSS\Landing.css">   
+    <title>Pokemon</title>   
 </head>
 
 <body>
@@ -18,8 +18,11 @@
     <!--Start of header_labels-->
     <div class = "global_nav">
     <ul class = "header_labels"> <!--Might have to change this class name when we get to CSS-->
-      <li> <a href="HomeGeneral.php"><img id="logo" src="images/logo.png" alt="Store logo" style="text-align:center; width:140px; height:80px;"> </li>
-      <li> <a href="ManageAccount_general.php"><img id ="ManageAccount" src="images/user-icon.png" alt="manageaccount" style="width:50px; height:50px;"> </li>
+      <li style="float:center"> <a href="HomeGeneral.php"><img id="logo" src="images/TCGplayer-logo.png" alt="Store logo" style="text-align:center; width:140px; height:80px;"> </li>
+      <li style="float:right"> <a href="ManageAccount_general.php"><img id ="ManageAccount" src="images/user-icon.png" alt="manageaccount" style="width:50px; height:50px;"> </li>
+      <li style="float:right"> <a href="Landing.php"><img id ="logout" src="images/signout.png" alt="signout" style="width:50px; height:50px;"> </li>
+      <li style="float:right"> <a href="cart.php"><img id ="cart" src="images/shopping-cart.png" alt="cart" style="width:50px; height:50px;"> </li>
+      <li style="float:right"> <a href="cart.php"><img id ="cart" src="images/history.png" alt="cart" style="width:50px; height:50px;"> </li>
     </ul>
     </div>
     <!--End header_labels--> 
@@ -28,8 +31,7 @@
 <!--End of the global navigation section-->
 
 <main>
-<!--Start of the HTML filter component -->
-?>
+<!--Start of the filter component -->
 <h2>Filter</h2>
 <ul class = "filter_labels">
   <li><a href="showall.php"> Show all</a></li>
@@ -38,17 +40,16 @@
   <li><a href="pokemon.php"> Pokemon</a></li>
   <li><a href="cardfight.php"> Cardfight</a></li>
   <li><a href="dragonball.php"> Dragon Ball Super</a></li>
- <li><a href="fleshandblood.php"> Flesh and Blood</a></li>
+ <li><a href="fleshblood.php"> Flesh and Blood</a></li>
 </ul>
 <br>
 <div class = "filter_labels">
-  <li><a href="yugiohQuery.php?id=SetName">Set Name</a></li>
-  <li><a href="yugiohQuery.php?id=RarityName">Rarity Name</a></li>
-  <li><a href="yugiohQuery.php?id=CardType">Card Type</a></li>
+  <li><a href="pokemonQuery.php?id=SetName">Set Name</a></li>
+  <li><a href="pokemonQuery.php?id=RarityName">Rarity Name</a></li>
+  <li><a href="pokemonQuery.php?id=CardType">Card Type</a></li>
 </div>
 <br>
 
-</main>
 <section style="color:darkcyan;" class="display">
     <?php //If any of the sub-categories are picked then it will redirect here.
         $cards = array(); //To store the picture file paths for the cards
@@ -63,11 +64,11 @@
         $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
         or die("ERROR: unable to connect to database!");
         //query instructions
-        $query = "SELECT tcg.Picture, tcg.Name, tcg.TCG_ID, tcg.Alternative, yugioh_category.SetName, yugioh_category.Rarity, yugioh_category.CardType
+        $query = "SELECT tcg.Picture, tcg.Name, tcg.TCG_ID, tcg.Alternative, pokemon_category.SetName, pokemon_category.Rarity, pokemon_category.CardType
                     FROM tcg
-                    LEFT JOIN yugioh_category
-                    ON tcg.TCG_ID = yugioh_category.TCG_ID";
-                    //WHERE tcg.TCG_ID = yugioh_category.TCG_ID;"
+                    LEFT JOIN pokemon_category
+                    ON tcg.TCG_ID = pokemon_category.TCG_ID";
+                    //WHERE tcg.TCG_ID = pokemon_category.TCG_ID;"
         $result = mysqli_query($conn, $query) or die("ERROR: unable to execute query!");
 
         $i = 0; //For cards array
@@ -95,7 +96,7 @@
             $categories_SetName = array_unique($categories_SetName);
 
             foreach($categories_SetName as $category) {
-            echo "<h2>" . $category. "</h2>"; //Displaying yugioh set names
+            echo "<h2>" . $category. "</h2>"; //Displaying pokemon set names
             echo "<ul class=\"tcgCards_category\">";
             for ($i=0; $i < count($cards); $i+=7) 
             {
@@ -113,7 +114,7 @@
             $categories_RarityName = array_unique($categories_RarityName);
 
             foreach($categories_RarityName as $category) {
-            echo "<h2>$category</h2>"; //Displaying yugioh rarity names
+            echo "<h2>$category</h2>"; //Displaying pokemon rarity names
             echo "<ul class=\"tcgCards_category\">";
             for ($i=0; $i < count($cards); $i+=7) 
             {
@@ -131,7 +132,7 @@
             $categories_CardType = array_unique($categories_CardType);
 
             foreach($categories_CardType as $category) {
-            echo "<h2>$category</h2>"; //Displaying yugioh set names
+            echo "<h2>$category</h2>"; //Displaying pokemon set names
             echo "<ul class=\"tcgCards_category\">";
             for ($i=0; $i < count($cards); $i+=7) 
             {
@@ -146,5 +147,7 @@
             
 ?>
 </section>
+</main>
+
 </body>
 </html>

@@ -26,6 +26,8 @@
 <!--End of the global navigation section-->
 
 <main>
+
+
 </main>
 
 <!--Just a footer for profesionalism-->

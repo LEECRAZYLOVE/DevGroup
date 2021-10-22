@@ -20,6 +20,7 @@
       <li> <a href="ManageAccount_general.php"><img id ="ManageAccount" src="images/user-icon.png" alt="manageaccount" style="text-align:right; width:50px; height:50px;"> </li>
       <li> <a href="AdminRequests.php"><img id ="history" src="images/history.png" alt="history" style="text-align:right; width:50px; height:50px;"> </li>
       <li> <a href="Landing.php"><img id ="signout" src="images/signout.png" alt="signout" style="text-align:right; width:50px; height:50px;"> </li>
+      <li> <a href="AdminPayments.php"><img id ="payments" src="images/wallet.png" alt="signout" style="text-align:right; width:50px; height:50px;"> </li>
     </ul>
     </div>
     <!--End header_labels--> 

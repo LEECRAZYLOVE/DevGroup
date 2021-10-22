@@ -65,12 +65,13 @@
       </td>
     </tr>
     <?php
-
+//connect to datbase
 require_once("config.php");
 
 $connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
                 or die("<strong style = \"color : red; \"> Could not connect to the database! </strong>");
 
+  //query 
 $query = "SELECT TCG_ID, Name, Price, Picture FROM tcg WHERE OrderStatus = 'Cart'";
 
 $result = mysqli_query($connect, $query)

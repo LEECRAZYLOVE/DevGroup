@@ -31,8 +31,8 @@
     <div class = "global_nav">
     <ul class = "header_labels"> <!--Might have to change this class name when we get to CSS-->
       <!-- <li> <a href="HomeGeneral.php"><img id="logo" src="images/logo.png" alt="Store logo" style="text-align:center; width:140px; height:80px;"> </li>
-      <li> <a href="ManageAccount_general.php"><img id ="ManageAccount" src="images/user-icon.png" alt="manageaccount" style="width:50px; height:50px;"> </li> -->
-    </ul>
+      <li> <a href="ManageAccount_general.php"><img id ="ManageAccount" src="images/user-icon.png" alt="manageaccount" style="width:50px; height:50px;"> </li>
+    </ul> -->
     </div>
     <!--End header_labels--> 
   </nav>

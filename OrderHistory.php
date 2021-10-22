@@ -37,7 +37,7 @@
             or die("could not connect to database");
         
         //issue query instructions
-        $query = "SELECT * FROM tcg WHERE Seller_ID = $currentuser" ;
+        $query = "SELECT * FROM tcg WHERE Seller_ID = '$currentuser'" ;
         $result = mysqli_query($conn, $query) or die("could not retrieve data!");
 
         //Table headings
@@ -46,16 +46,14 @@
                 <td>Picture</td>
                 <td>Card Name</td>
                 <td>Price</td>
-                <td>Seller Name</td>
                 <td></td>
                 </tr>";
         //table content
         while ($row = mysqli_fetch_array($result)) {
             echo "<tr>";
             echo "<td>" . "<img src=\"Images/Cards/" . $row['Picture'] . "\" width=\"100\">" . "</td>";
-            echo "<td>" . $row['Card_Name'] . "</td>";
+            echo "<td>" . $row['Name'] . "</td>";
             echo "<td>R" . $row['Price'] . "</td>";
-            echo "<td>" . $row['Seller_Name'] . "</td>";
             echo "<td>" . "<a href=\"PaidQuery.php?id=" . $row['TCG_ID'] . "\"><input type=\"button\" value=\"PAID\"></a>" . "</td>";
             echo "</tr>";
         }

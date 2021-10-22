@@ -53,12 +53,6 @@ tcg.NAME AS Card_Name,
 $result = mysqli_query($connect, $query)
                 or die("<strong style = \"color : red; \"> Could not execute query! </strong>");
 
-                // while($row = mysqli_fetch_array($result)){
-                //   $price = $row['Price'];
-                //   $name = $row['Name'];
-                //   $picture = $row['Picture'];
-                //   $status = $row['Status'];
-                // }
   // start table
               echo "<table width=\"80%\" border=0>
                       <tr bgcolor=\"#428bca\">

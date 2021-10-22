@@ -25,7 +25,7 @@
   </nav>
 </header>
 <!--End of the global navigation section-->
-<main style="color: whitesmoke;">
+<main style="color: black;">
 <?php
 // Accessing the database
 require_once("config.php");
@@ -35,10 +35,11 @@ require_once("config.php");
 
 $selectedProduct = $_REQUEST['id'];
 
-
+//connect to database
 $connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
                 or die("<strong style = \"color : red; \"> Could not connect to the database! </strong>");
 
+//query
 $query = "SELECT Name, Description, Price, Quality, Year, Admin_Class, Seller_ID, Picture FROM tcg WHERE TCG_ID = '$selectedProduct'";
 
 $result = mysqli_query($connect, $query)
@@ -55,7 +56,7 @@ $result = mysqli_query($connect, $query)
                   $picture = $row['Picture'];
                 }   
 
-
+//query
 $sellerq = "SELECT Username FROM user WHERE USER_ID = '$sellerID'";
 
 $sellresult = mysqli_query($connect, $sellerq)
@@ -88,7 +89,7 @@ Year: <?php echo $year ?> <br> -->
 		</div>
     </div>
 </section>
-
+<!-- Display product -->
             </div>
 
             <div class="col-md-6 col-md-offset-1 col-sm-12 col-xs-12">

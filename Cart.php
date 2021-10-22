@@ -312,8 +312,8 @@ input:focus {
 
 <!--Just a footer for profesionalism-->
 <footer>
-    <p>&copy; 2021 NameOfStore.&nbsp;&nbsp; All Rights Reserved. &nbsp;&nbsp;Proudly created by
-        NameOfStore
+    <p>&copy; 2021 Ultimate TCG.&nbsp;&nbsp; All Rights Reserved. &nbsp;&nbsp;Proudly created by
+        Notrem, Stuurman & Van der Merwe
     </p>
     <p>
         <small>Last modified:

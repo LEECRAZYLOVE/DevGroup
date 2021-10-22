@@ -35,7 +35,7 @@
               $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
                   or die("ERROR: unable to connect to database!");
               // issue query instructions
-              $query = "SELECT * FROM sell_request WHERE Admin_ID=mert9312";
+              $query = "SELECT * FROM sell_request WHERE Admin_ID = 'mert9312'";
               $result = mysqli_query($conn, $query) or die("ERROR: unable to execute query!");
               // start table
               echo "<table width=\"50%\" border=0>
@@ -51,12 +51,14 @@
               // populate table rows with data from database
               while ($row = mysqli_fetch_array($result)) {
                   echo "<tr>";
-                  echo "<td>" . "<img src=\"Images/Cards/" . $row['Picture'] . "\" width=\"100\">" . "</td>";
+                  echo "<td>" . "<img src=\"Images/Cards/" . $row['Image'] . "\" width=\"100\">" . "</td>";
                   echo "<td>" . $row['Card_Name'] . "</td>";
                   echo "<td>" . $row['Category'] . "</td>";
                   echo "<td>" . $row['Set_Name'] . "/5</td>";
                   echo "<td>" . $row['Rarity'] . "</td>";
                   echo "<td>R" . $row['Price'] . "</td>";
+                  echo "<td>" . "<a href=\"Display_tcg.php?id=" . $row['TCG_ID'] . "\"><input type=\"button\" value=\"ACCEPT\"></a>" . "</td>";
+                  echo "<td>" . "<a href=\"delete.php?id=" . $row['TGC_ID'] . "\"><input type=\"button\" value=\"DECLINE\"></a>" . "</td>";
                   // echo "<td>" . "<a href=\"Display_tcg.php?id=" . $row['TCG_ID'] . "\"><input type=\"button\" value=\"D\"></a>" . "</td>";   //I want these to be a and d buttons
                   // echo "<td>" . "<a href=\"delete.php?id=" . $row['TGC_ID'] . "\"><input type=\"button\" value=\"A\"></a>" . "</td>";
                   echo "</tr>";

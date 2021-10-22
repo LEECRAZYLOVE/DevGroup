@@ -26,20 +26,62 @@
 <!--End of the global navigation section-->
 
 <main>
+<!--Start of the HTML filter component -->
+<h2>Filter</h2>
+<ul class = "filter_labels">
+  <li><a href="homeadmin.php?id=users"> Total Number of Users</a></li><br>
+  <li><a href="homeadmin.php?id=products"> Total Number of Products</a></li><br>
+  <li><a href="homeadmin.php?id=magicnumbers"> Total Number of Magic Products</a></li><br>
+  <li><a href="homeadmin.php?id=dragonnumbers"> Total Number of Dragon Ball Super Products</a></li><br>
+  <li><a href="homeadmin.php?id=pokemonnumbers"> Total Number of Pokemon Products</a></li><br>
+  <li><a href="homeadmin.php?id=cardfightnumbers"> Total Number of Cardfight Vangaurd Products</a></li><br>
+ <li><a href="homeadmin.php?id=fleshbloodnumbers"> Total Number of Flesh and Blood Products</a></li><br>
+ <li><a href="homeadmin.php?id=yugiohnumbers"> Total Number of Yu-Gi-Oh! Products</a></li><br>
+ <li><a href="homeadmin.php?id=magiccommission"> Total Commission Earned for Magic Products</a></li><br>
+ <li><a href="homeadmin.php?id=dragoncommission"> Total Commission Earned for Dragon Ball Super Products</a></li><br>
+ <li><a href="homeadmin.php?id=pokemoncommission"> Total Commission Earned for Pokemon Products</a></li><br>
+ <li><a href="homeadmin.php?id=cardfightcommission"> Total Commission Earned for Cardfight Vangaurd Products</a></li><br>
+ <li><a href="homeadmin.php?id=fleshbloodcommission"> Total Commission Earned for Flesh and Blood Products</a></li><br>
+ <li><a href="homeadmin.php?id=yugiohcommission"> Total Commission Earned for Yu-Gi-Oh! Products</a></li><br>
+</ul>
+<br>
+<br><br>
 
+<ul class = "filter_labels">
+  <li><h1>Total is</h1></li>
+</ul>
 
 </main>
+<!-- Filtering for all the BI Intelligence Queries -->
+<?php 
+    //$cards = array(); //To store the picture file paths or the cards
+    require_once("config.php");
+    //if (isset($_REQUEST['submit'])) {
+    $filter = $_REQUEST['id'];
+    $answer = 0;
+    $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
+    or die("ERROR: unable to connect to database!");
 
-<!--Just a footer for profesionalism-->
-<footer>
-    <p>&copy; 2021 NameOfStore.&nbsp;&nbsp; All Rights Reserved. &nbsp;&nbsp;Proudly created by
-        NameOfStore
-    </p>
-    <p>
-        <small>Last modified:
-            <time>14 October 2021</time>
-        </small>
-    </p>
-</footer>
+    if ($filter == "users"){
+      $query = "SELECT COUNT(User_ID) as Answer FROM user";
+    } else if($filter == "products") {
+      $query = "SELECT COUNT(TCG_ID) as Answer FROM tcg";
+    }
+    
+    
+    $result = mysqli_query($conn, $query) or die("ERROR: unable to execute query!");
+
+    $i = 0;
+    while ($row = mysqli_fetch_array($result)) {
+      $answer = $row["Answer"];
+    }
+    mysqli_close($conn);
+    
+    //Display for every filter
+    echo 
+    "<ul class = \"$filter_labels\">
+    <li><h1>Total is</h1></li>
+    </ul>";
+?>
 </body>
 </html>

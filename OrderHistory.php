@@ -27,6 +27,7 @@
 
 
     <?php 
+    $currentuser = $_COOKIE['user'];
         //database credentials
         require_once("config.php");
         //connect

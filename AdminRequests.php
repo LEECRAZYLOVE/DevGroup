@@ -35,10 +35,10 @@
               $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
                   or die("ERROR: unable to connect to database!");
               // issue query instructions
-              $query = "SELECT * FROM sell_request";
+              $query = "SELECT * FROM sell_request WHERE Admin_ID=mert9312";
               $result = mysqli_query($conn, $query) or die("ERROR: unable to execute query!");
               // start table
-              echo "<table width=\"80%\" border=0>
+              echo "<table width=\"50%\" border=0>
                       <tr bgcolor=\"#428bca\">
                       <td>Picture</td>
                       <td>Card_Name</td>
@@ -46,14 +46,6 @@
                       <td>Set_Name</td>
                       <td>Card_Type</td>
                       <td>Rarity</td>
-                      <td>Colour</td>
-                      <td>Nation</td>
-                      <td>Grade</td>
-                      <td>Skill_Icon</td>
-                      <td>Sub_Type</td>
-                      <td>Class</td>
-                      <td>Age</td>
-                      <td>Description</td>
                       <td>Price</td>
                       <td>Seller_ID</td>
                       <td colspan=\"2\"></td>

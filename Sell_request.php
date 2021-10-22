@@ -48,8 +48,8 @@
     <!--Start of header_labels-->
     <div class = "global_nav">
     <ul class = "header_labels"> <!--Might have to change this class name when we get to CSS-->
-      <li> <a href="HomeGeneral.php"><img id="logo" src="images/logo.png" alt="Store logo" style="text-align:center; width:140px; height:80px;"> </li>
-      <li> <a href="ManageAccount_general.php"><img id ="ManageAccount" src="images/user-icon.png" alt="manageaccount" style="width:50px; height:50px;"> </li>
+      <!-- <li> <a href="HomeGeneral.php"><img id="logo" src="images/logo.png" alt="Store logo" style="text-align:center; width:140px; height:80px;"> </li>
+      <li> <a href="ManageAccount_general.php"><img id ="ManageAccount" src="images/user-icon.png" alt="manageaccount" style="width:50px; height:50px;"> </li> -->
     </ul>
     </div>
     <!--End header_labels--> 
@@ -59,10 +59,8 @@
 
 <h1>Sell Request:</h1>
 
-    <form action="Sell_Request_Query.php" method="post" enctype="multipart/form-data">
+    <form action="Sell_Request_Query.php" method="post">
         
-    <br><input class="textbox" id="seller_id" type="text" name="sellerid" placeholder="seller id here(will be hidden)"><br>
-
         Card Name: <br><input class="textbox" id="card_name" type="text" name="card_name" required><br>
             
         <label for="category">Category:</label>

@@ -134,10 +134,8 @@
               <img src="images/wallet.png" style="width: 100%; max-width: 300px" />
             </td>
 
-            <td>
-              Invoice #: 123<br />
-              Created: January 1, 2015<br />
-              Due: February 1, 2015
+            <td>              
+              <br >Created: 22 October 2021<br />
             </td>
           </tr>
         </table>

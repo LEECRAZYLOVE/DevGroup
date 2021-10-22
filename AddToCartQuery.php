@@ -19,19 +19,22 @@ require_once("config.php");
     // request tcg id from add to cart btn
     $tcgid = $_REQUEST['id'];
     $price = 0;
+    $seller = "";
 
-    $priceq = "SELECT Price FROM tcg WHERE TCG_ID = '$tcgid'";
+    $priceq = "SELECT Price, Seller_ID FROM tcg WHERE TCG_ID = '$tcgid'";
 
     $priceresult = mysqli_query($connect, $priceq)
                 or die("<strong style = \"color : red; \"> Could not execute query! </strong>");
 
                 while($row = mysqli_fetch_array($priceresult)){
-                  $price = $row['Price'];}
+                  $price = $row['Price'];
+                  $seller = $row['Seller_ID'];
+                }
 
     //echo $price;
     // query instructions 
-    $query =  "INSERT INTO cart (TCG_ID, Buyer_ID, Price)
-                VALUES ('$tcgid', '$currentuser', '$price')";
+    $query = "UPDATE tcg SET OrderStatus = 'Cart'
+              WHERE  = '$seller';";
 
     $result = mysqli_query($connect, $query)
                 or die("<strong style = \"color : red; \"> Could not execute query! </strong>");

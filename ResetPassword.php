@@ -84,10 +84,4 @@ if (isset($_REQUEST['submit'])) {
 
 </body>
 
-<footer>
-    <p>&copy; 2021 NameOfStore.&nbsp;&nbsp; All Rights Reserved. &nbsp;&nbsp;Proudly created by
-        NameOfStore
-    </p>
-</footer>
-
 </html>

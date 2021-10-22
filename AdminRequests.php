@@ -57,8 +57,8 @@
                   echo "<td>" . $row['Set_Name'] . "/5</td>";
                   echo "<td>" . $row['Rarity'] . "</td>";
                   echo "<td>R" . $row['Price'] . "</td>";
-                  echo "<td>" . "<a href=\"Display_tcg.php?id=" . $row['TCG_ID'] . "\"><input type=\"button\" value=\"ACCEPT\"></a>" . "</td>";
-                  echo "<td>" . "<a href=\"delete.php?id=" . $row['TGC_ID'] . "\"><input type=\"button\" value=\"DECLINE\"></a>" . "</td>";
+                  echo "<td>" . "<input type=\"button\" value=\"ACCEPT\"></a>" . "</td>";
+                  echo "<td>" . "<input type=\"button\" value=\"DECLINE\"></a>" . "</td>";
                   // echo "<td>" . "<a href=\"Display_tcg.php?id=" . $row['TCG_ID'] . "\"><input type=\"button\" value=\"D\"></a>" . "</td>";   //I want these to be a and d buttons
                   // echo "<td>" . "<a href=\"delete.php?id=" . $row['TGC_ID'] . "\"><input type=\"button\" value=\"A\"></a>" . "</td>";
                   echo "</tr>";

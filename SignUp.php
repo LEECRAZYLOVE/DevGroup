@@ -11,22 +11,6 @@
     <title>Sign Up</title>   
 </head>
 <body>
-<!--Start of the global navigation section-->
-<header>
-  <nav>
-    <!--Start of header_labels-->
-    <div class = "global_nav">
-    <ul class = "header_labels"> <!--Might have to change this class name when we get to CSS-->
-    <li style="float:right"> <a href="Landing.php"><img id ="signout" src="images/signout.png" alt="signout" style="width:50px; height:50px;"> </li>
-      <li style="float:right"> <a href="ManageAccount_general.php"><img id ="ManageAccount" src="images/user-icon.png" alt="manageaccount" style="width:50px; height:50px;"> </li>
-      <li style="float:right"> <a href="OrderHistory.php"><img id ="history" src="images/history.png" alt="history" style="width:50px; height:50px;"> </li>
-      <li style="float:right"> <a href="OrderHistory.php"><img id ="cart" src="images/shopping-cart.png" alt="cart" style="width:50px; height:50px;"> </li>
-    </ul>
-    </div>
-    <!--End header_labels--> 
-  </nav>
-</header>
-<!--End of the global navigation section-->
 <main>   
   <ul class="form">
      <h1>Create New Account</h1>
@@ -64,7 +48,7 @@
         </form>
     
 <!--End of sign up form section-->
-        <a href="SignIn.php">Already have an account</a>
+        <a style="color:darkcyan" href="SignIn.php">Already have an account?</a>
   <ul>
 
 <!--To clear the form input after submit button has been clicked-->
@@ -75,17 +59,5 @@ function Clear() {
 </script>
 
 </main>
-
-<!--Just a footer for profesionalism-->
-<footer>
-    <p>&copy; 2021 NameOfStore.&nbsp;&nbsp; All Rights Reserved. &nbsp;&nbsp;Proudly created by
-        NameOfStore
-    </p>
-    <p>
-        <small>Last modified:
-            <time>14 October 2021</time>
-        </small>
-    </p>
-</footer>
 </body>
 </html>

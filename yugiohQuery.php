@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Itim">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="CSS\Landing.css">   
-    <title>Pokemon</title>   
+    <title>Yu-Gi-Oh1</title>   
 </head>
 
 <body>
@@ -18,11 +18,12 @@
     <!--Start of header_labels-->
     <div class = "global_nav">
     <ul class = "header_labels"> <!--Might have to change this class name when we get to CSS-->
-      <li style="float:center"> <a href="HomeGeneral.php"><img id="logo" src="images/TCGplayer-logo.png" alt="Store logo" style="text-align:center; width:140px; height:80px;"> </li>
+      <li> <a href="HomeGeneral.php"><img id="logo" src="images/logo.png" alt="Store logo" style="text-align:center; width:160px; height:100px;"> </li>
+      <li style="float:right"> <a href="Landing.php"><img id ="signout" src="images/signout.png" alt="signout" style="width:50px; height:50px;"> </li>
       <li style="float:right"> <a href="ManageAccount_general.php"><img id ="ManageAccount" src="images/user-icon.png" alt="manageaccount" style="width:50px; height:50px;"> </li>
-      <li style="float:right"> <a href="Landing.php"><img id ="logout" src="images/signout.png" alt="signout" style="width:50px; height:50px;"> </li>
-      <li style="float:right"> <a href="cart.php"><img id ="cart" src="images/shopping-cart.png" alt="cart" style="width:50px; height:50px;"> </li>
-      <li style="float:right"> <a href="cart.php"><img id ="cart" src="images/history.png" alt="cart" style="width:50px; height:50px;"> </li>
+      <li style="float:right"> <a href="OrderHistory.php"><img id ="history" src="images/history.png" alt="history" style="width:50px; height:50px;"> </li>
+      <li style="float:right"> <a href="Cart.php"><img id ="cart" src="images/shopping-cart.png" alt="cart" style="width:50px; height:50px;"> </li>
+      <li style="float:right"> <a href="sell_request.php"><img id ="cart" src="images/sell.png" alt="cart" style="width:50px; height:50px;"> </li>
     </ul>
     </div>
     <!--End header_labels--> 
@@ -44,9 +45,9 @@
 </ul>
 <br>
 <div class = "filter_labels">
-  <li><a href="pokemonQuery.php?id=SetName">Set Name</a></li>
-  <li><a href="pokemonQuery.php?id=RarityName">Rarity Name</a></li>
-  <li><a href="pokemonQuery.php?id=CardType">Card Type</a></li>
+  <li><a href="yugiohQuery.php?id=SetName">Set Name</a></li>
+  <li><a href="yugiohQuery.php?id=RarityName">Rarity Name</a></li>
+  <li><a href="yugiohQuery.php?id=CardType">Card Type</a></li>
 </div>
 <br>
 
@@ -54,7 +55,7 @@
     <?php //If any of the sub-categories are picked then it will redirect here.
         $cards = array(); //To store the picture file paths for the cards
         $filter = $_REQUEST['id'];
-        echo $filter;
+        // echo $filter;
         $categories_SetName = array(); //To store all the set names
         $categories_RarityName = array(); //To store all the Rarity names
         $categories_CardType = array(); //To store all the card types
@@ -64,11 +65,11 @@
         $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
         or die("ERROR: unable to connect to database!");
         //query instructions
-        $query = "SELECT tcg.Picture, tcg.Name, tcg.TCG_ID, tcg.Alternative, pokemon_category.SetName, pokemon_category.Rarity, pokemon_category.CardType
+        $query = "SELECT tcg.Picture, tcg.Name, tcg.TCG_ID, tcg.Alternative, yugioh_category.SetName, yugioh_category.Rarity, yugioh_category.CardType
                     FROM tcg
-                    LEFT JOIN pokemon_category
-                    ON tcg.TCG_ID = pokemon_category.TCG_ID";
-                    //WHERE tcg.TCG_ID = pokemon_category.TCG_ID;"
+                    LEFT JOIN yugioh_category
+                    ON tcg.TCG_ID = yugioh_category.TCG_ID";
+                    //WHERE tcg.TCG_ID = yugioh_category.TCG_ID;"
         $result = mysqli_query($conn, $query) or die("ERROR: unable to execute query!");
 
         $i = 0; //For cards array
@@ -96,7 +97,7 @@
             $categories_SetName = array_unique($categories_SetName);
 
             foreach($categories_SetName as $category) {
-            echo "<h2>" . $category. "</h2>"; //Displaying pokemon set names
+            echo "<h2>" . $category. "</h2>"; //Displaying yugioh set names
             echo "<ul class=\"tcgCards_category\">";
             for ($i=0; $i < count($cards); $i+=7) 
             {
@@ -114,7 +115,7 @@
             $categories_RarityName = array_unique($categories_RarityName);
 
             foreach($categories_RarityName as $category) {
-            echo "<h2>$category</h2>"; //Displaying pokemon rarity names
+            echo "<h2>$category</h2>"; //Displaying yugioh rarity names
             echo "<ul class=\"tcgCards_category\">";
             for ($i=0; $i < count($cards); $i+=7) 
             {
@@ -132,7 +133,7 @@
             $categories_CardType = array_unique($categories_CardType);
 
             foreach($categories_CardType as $category) {
-            echo "<h2>$category</h2>"; //Displaying pokemon set names
+            echo "<h2>$category</h2>"; //Displaying yugioh set names
             echo "<ul class=\"tcgCards_category\">";
             for ($i=0; $i < count($cards); $i+=7) 
             {

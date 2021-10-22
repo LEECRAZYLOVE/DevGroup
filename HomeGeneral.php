@@ -27,6 +27,7 @@ setcookie('user', $currentuser, time()+86400, "/");
       <li style="float:right"> <a href="ManageAccount_general.php"><img id ="ManageAccount" src="images/user-icon.png" alt="manageaccount" style="width:50px; height:50px;"> </li>
       <li style="float:right"> <a href="OrderHistory.php"><img id ="history" src="images/history.png" alt="history" style="width:50px; height:50px;"> </li>
       <li style="float:right"> <a href="Cart.php"><img id ="cart" src="images/shopping-cart.png" alt="cart" style="width:50px; height:50px;"> </li>
+      <li style="float:right"> <a href="sell_request.php"><img id ="cart" src="images/sell.png" alt="cart" style="width:50px; height:50px;"> </li>
     </ul>
     </div>
     <!--End header_labels--> 

@@ -41,7 +41,7 @@
        </form>
      
 <!--End of log in form section-->
-      <a style="color: white" href="SignUp.php">Create new account</a> 
+      <br><a style="color:darkcyan" href="SignUp.php">Create new account</a> 
    </ul>
 </main>
 </body>

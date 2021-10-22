@@ -30,7 +30,7 @@
 
 <main>
 <!--Start of the HTML filter component -->
-<h2>Filter</h2>
+<h2>Business Intelligence Dashboard</h2>
 <ul class = "filter_labels">
   <li><a href="homeadmin.php?id=users"> Total Number of Users</a></li><br>
   <li><a href="homeadmin.php?id=products"> Total Number of Products</a></li><br>
@@ -49,10 +49,6 @@
 </ul>
 <br>
 <br><br>
-
-<ul class = "filter_labels">
-  <li><h1>Total is</h1></li>
-</ul>
 
 </main>
 <!-- Filtering for all the BI Intelligence Queries -->
@@ -83,8 +79,8 @@
     //Display for every filter
     echo 
     "<ul class = filter_labels>
-    <li><h1>Total is</h1></li>
-    <li><input  value=\"$filter\"></li>
+    <h3>Total is</h3>
+    <li><input type='text' value=\"$answer\"></li>
     </ul>";
 ?>
 <!--Just a footer for profesionalism-->

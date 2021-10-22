@@ -17,8 +17,8 @@
     <!--Start of header_labels-->
     <div class = "global_nav">
     <ul class = "header_labels"> <!--Might have to change this class name when we get to CSS-->
-      <li> <a href="HomeGeneral.php"><img id="logo" src="images/logo.png" alt="Store logo" style="text-align:center; width:140px; height:80px;"> </li>
-      <li> <a href="ManageAccount_general.php"><img id ="ManageAccount" src="images/user-icon.png" alt="manageaccount" style="width:50px; height:50px;"> </li>
+    <li> <a href="HomeGeneral.php"><img id="logo" src="images/logo.png" alt="Store logo" style="text-align:left; width:160px; height:100px;"> </li>
+      <li style="float:right"> <a href="SignIn.php"><img id ="ManageAccount" src="images/user-icon.png" alt="manageaccount" style="width:50px; height:50px;"> </li>
     </ul>
     </div>
     <!--End header_labels--> 
@@ -186,12 +186,12 @@
 </main>
 <!--Just a footer for profesionalism-->
 <footer>
-    <p>&copy; 2021 NameOfStore.&nbsp;&nbsp; All Rights Reserved. &nbsp;&nbsp;Proudly created by
-        NameOfStore
+    <p>&copy; 2021 Ultimate TCG.&nbsp;&nbsp; All Rights Reserved. &nbsp;&nbsp;Proudly created by
+        Notrem, Stuurman & Van der Merwe
     </p>
     <p>
         <small>Last modified:
-            <time>14 October 2021</time>
+            <time>21 October 2021</time>
         </small>
     </p>
 </footer>

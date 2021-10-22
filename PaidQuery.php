@@ -14,5 +14,10 @@ $query = "UPDATE tcg
 $result = mysqli_query($connect, $query)
                 or die("<strong style = \"color : red; \"> Could not execute query! </strong>");
 
+header("refresh:0; AdminPayments.php");
+echo '<script> 
+            alert("Item Paid.");
+            </script>';
+
 
 ?>

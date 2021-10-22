@@ -10,7 +10,7 @@ $currentuser = $_COOKIE['user'];
 
 //add appropriate fields
 require_once("config.php");
-// $currentcart = $_COOKIE['cart'];
+//$currentcart = $_COOKIE['cart'];
 
     //connecting to the database
     $connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
@@ -28,9 +28,9 @@ require_once("config.php");
                 while($row = mysqli_fetch_array($priceresult)){
                   $price = $row['Price'];}
 
-    echo $currentuser;
+    //echo $price;
     // query instructions 
-    $query =  "INSERT INTO cart_item (TCG_ID, Buyer_ID, Price)
+    $query =  "INSERT INTO cart (TCG_ID, Buyer_ID, Price)
                 VALUES ('$tcgid', '$currentuser', '$price')";
 
     $result = mysqli_query($connect, $query)
@@ -40,8 +40,8 @@ require_once("config.php");
     mysqli_close($connect);
     echo '<script> 
             alert("Item added to cart.");
-            window.location.href="Display_tcg.php";
-            </script>'; //Alerts the user redirects back to account page   
+            </script>'; //Alerts the user redirects back to account page
+    header("refresh:5; Location:homegeneral.php?id=$currentuser"); //this may or may not work
 ?>
 </body> 
 

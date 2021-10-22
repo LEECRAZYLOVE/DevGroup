@@ -47,8 +47,6 @@ setcookie('user', $currentuser, time()+86400, "/");
  <li><a href="fleshandblood.php?id=fleshblood"> Flesh and Blood</a></li>
 </ul>
 <br>
-<h2><?php echo $currentuser;?></h2>
-<h2><?php echo $_COOKIE['user'];?></h2>
 </main>
  
 </body>

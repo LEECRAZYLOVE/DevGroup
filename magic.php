@@ -73,35 +73,17 @@
   <li><a >Colour</a></li>
 </div>
 
-  <?php
-    // if (isset($_REQUEST["id"]))
-    // {
-    //   $filter = $_REQUEST['id'];
-    //   if ($filter == "all")
-    //   {
-    //     echo "<h2>Magic</h2>"; //Displaying Magic
-    //     echo "<ul class=\"tcgCards_category\"> <!-- Magic -->";
-    //     for ($i=0; $i < count($cards); $i+=4) 
-    //     {
-    //       if (substr($cards[$i],0,1) == 'm' && $cards[$i+3] != 'T') 
-    //       { //Checking to see that it's in the right category
-    //         echo "<li><a style=\"text-decoration:none;\" href=\"display_tcg.php?id=" . $cards[$i+1] . "\"><p style =\"text-align:center;\">" . $cards[$i+2] . "</p><img class=\"tcgCards\" src=\"images/cards/" . $cards[$i] ." \" style=\"width:200px; height:250px;\"></li>";
-    //       }
-    //     }
-    //     echo "</ul>";
-
-    //     echo "<h2>Yu-Gi-Oh!</h2>"; //Displaying Yu-Gi-Oh!
-    //     for ($i=0; $i < count($cards); $i+=4) 
-    //     {
-    //       if (substr($cards[$i],0,1) == 'y' && $cards[$i+3] != 'T') 
-    //       { //Checking to see that it's in the right category
-    //         echo "<li><a style=\"text-decoration:none;\" href=\"display_tcg.php?id=" . $cards[$i+1] . "\"><p style =\"text-align:center;\">" . $cards[$i+2] . "</p><img class=\"tcgCards\" src=\"images/cards/" . $cards[$i] ." \" style=\"width:200px; height:250px;\"></li>";
-    //       }
-    //     }
-    //   }        
-    // }      
-  ?>
 </main>
-
+<!--Just a footer for profesionalism-->
+<footer>
+    <p>&copy; 2021 Ultimate TCG.&nbsp;&nbsp; All Rights Reserved. &nbsp;&nbsp;Proudly created by
+        Notrem, Stuurman & Van der Merwe
+    </p>
+    <p>
+        <small>Last modified:
+            <time>14 October 2021</time>
+        </small>
+    </p>
+</footer>
 </body>
 </html>

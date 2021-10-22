@@ -186,5 +186,16 @@ Year: <?php echo $year ?> <br> -->
     <!-- end product -->
 
 </main>
+<!--Just a footer for profesionalism-->
+<footer>
+    <p>&copy; 2021 Ultimate TCG.&nbsp;&nbsp; All Rights Reserved. &nbsp;&nbsp;Proudly created by
+        Notrem, Stuurman & Van der Merwe
+    </p>
+    <p>
+        <small>Last modified:
+            <time>14 October 2021</time>
+        </small>
+    </p>
+</footer>
 </body>
 </html>

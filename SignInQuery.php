@@ -19,7 +19,7 @@ while($row = mysqli_fetch_array($result))
     $currentuser = $row['User_ID'];
     $type = $row['UserType'];
 }
-  
+
 mysqli_close($conn); 
 
 //redirecting to the home page once successful

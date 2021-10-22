@@ -32,28 +32,6 @@
 
 <main>
 <!--Start of the HTML filter component -->
-<?php //Retrieving all the products
-    // $cards = array(); //To store the picture file paths or the cards
-    
-    // require_once("config.php");
-    // // make connection to database
-    // $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
-    //     or die("ERROR: unable to connect to database!");
-    // // issue query instructions
-    // $query = "SELECT Picture, Name, TCG_ID, Alternative FROM tcg";
-    // $result = mysqli_query($conn, $query) or die("ERROR: unable to execute query!");
-
-    // $i = 0;
-    // while ($row = mysqli_fetch_array($result)) {
-    //   $cards[$i] = $row["Picture"];
-    //   $cards[$i+1] = $row["TCG_ID"];
-    //   $cards[$i+2] = $row["Name"];  
-    //   $cards[$i+3] = $row["Alternative"]; 
-    //   $i+=4; 
-    // }
-
-    // // close the connection to database
-    // mysqli_close($conn);
 ?>
 <h2>Filter</h2>
 <ul class = "filter_labels">
@@ -67,40 +45,109 @@
 </ul>
 <br>
 <div class = "filter_labels">
-  <li><a href="SetName.php.php?id=SetName">Set name</a></li>
-  <li><a >Rarity name</a></li>
-  <li><a >Card type</a></li>
+  <li><a href="yugiohQuery.php?id=SetName">Set Name</a></li>
+  <li><a href="yugiohQuery.php?id=RarityName">Rarity Name</a></li>
+  <li><a href="yugiohQuery.php?id=CardType">Card Type</a></li>
 </div>
+<br>
 
-  <?php
-    // if (isset($_REQUEST["id"]))
-    // {
-    //   $filter = $_REQUEST['id'];
-    //   if ($filter == "all")
-    //   {
-    //     echo "<h2>Magic</h2>"; //Displaying Magic
-    //     echo "<ul class=\"tcgCards_category\"> <!-- Magic -->";
-    //     for ($i=0; $i < count($cards); $i+=4) 
-    //     {
-    //       if (substr($cards[$i],0,1) == 'm' && $cards[$i+3] != 'T') 
-    //       { //Checking to see that it's in the right category
-    //         echo "<li><a style=\"text-decoration:none;\" href=\"display_tcg.php?id=" . $cards[$i+1] . "\"><p style =\"text-align:center;\">" . $cards[$i+2] . "</p><img class=\"tcgCards\" src=\"images/cards/" . $cards[$i] ." \" style=\"width:200px; height:250px;\"></li>";
-    //       }
-    //     }
-    //     echo "</ul>";
-
-    //     echo "<h2>Yu-Gi-Oh!</h2>"; //Displaying Yu-Gi-Oh!
-    //     for ($i=0; $i < count($cards); $i+=4) 
-    //     {
-    //       if (substr($cards[$i],0,1) == 'y' && $cards[$i+3] != 'T') 
-    //       { //Checking to see that it's in the right category
-    //         echo "<li><a style=\"text-decoration:none;\" href=\"display_tcg.php?id=" . $cards[$i+1] . "\"><p style =\"text-align:center;\">" . $cards[$i+2] . "</p><img class=\"tcgCards\" src=\"images/cards/" . $cards[$i] ." \" style=\"width:200px; height:250px;\"></li>";
-    //       }
-    //     }
-    //   }        
-    // }      
-  ?>
 </main>
+<section style="color:darkcyan;" class="display">
+    <?php //If any of the sub-categories are picked then it will redirect here.
+        $cards = array(); //To store the picture file paths for the cards
+        $filter = $_REQUEST['id'];
+        echo $filter;
+        $categories_SetName = array(); //To store all the set names
+        $categories_RarityName = array(); //To store all the Rarity names
+        $categories_CardType = array(); //To store all the card types
 
+        require_once("config.php");
+
+        $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
+        or die("ERROR: unable to connect to database!");
+        //query instructions
+        $query = "SELECT tcg.Picture, tcg.Name, tcg.TCG_ID, tcg.Alternative, yugioh_category.SetName, yugioh_category.Rarity, yugioh_category.CardType
+                    FROM tcg
+                    LEFT JOIN yugioh_category
+                    ON tcg.TCG_ID = yugioh_category.TCG_ID";
+                    //WHERE tcg.TCG_ID = yugioh_category.TCG_ID;"
+        $result = mysqli_query($conn, $query) or die("ERROR: unable to execute query!");
+
+        $i = 0; //For cards array
+        $j = 0; //For categories array
+        while ($row = mysqli_fetch_array($result)) {
+            $cards[$i] = $row["Picture"];
+            $cards[$i+1] = $row["TCG_ID"];
+            $cards[$i+2] = $row["Name"];  
+            $cards[$i+3] = $row["Alternative"]; 
+            $cards[$i+4] = $row["SetName"];
+            $cards[$i+5] = $row["Rarity"];
+            $cards[$i+6] = $row["CardType"];
+            $categories_SetName[$j] = $row["SetName"];
+            $categories_RarityName[$j] = $row["Rarity"];
+            $categories_CardType[$j] = $row["CardType"];
+            $i+=7; //each set of 7 is a different card
+            $j++;
+        }
+        // close the connection to database
+        mysqli_close($conn);
+        // Set Name
+        if ($filter == "SetName") //Show all the set names essentially, order by set name
+        {  
+            //Making the array only have unique values without the duplicate sub-category name
+            $categories_SetName = array_unique($categories_SetName);
+
+            foreach($categories_SetName as $category) {
+            echo "<h2>" . $category. "</h2>"; //Displaying yugioh set names
+            echo "<ul class=\"tcgCards_category\">";
+            for ($i=0; $i < count($cards); $i+=7) 
+            {
+                if (substr($cards[$i],0,1) == 'p' && $cards[$i+3] != 'T' && $cards[$i+4] == $category) 
+                { //Checking to see that it's in the right category
+                echo "<li><a style=\"text-decoration:none;\" href=\"display_tcg.php?id=" . $cards[$i+1] . "\"><p style =\"text-align:center;\">" . $cards[$i+2] . "</p><img class=\"tcgCards\" src=\"images/cards/" . $cards[$i] ." \" style=\"width:200px; height:250px;\"></li>";
+                }
+            }
+            echo "</ul><br>";
+            }
+        }  //Rarity Name
+        else if ($filter == "RarityName") //Show all the rarity names essentially, order by rarity name 
+        {
+            //Making the array only have unique values without the duplicate sub-category name
+            $categories_RarityName = array_unique($categories_RarityName);
+
+            foreach($categories_RarityName as $category) {
+            echo "<h2>$category</h2>"; //Displaying yugioh rarity names
+            echo "<ul class=\"tcgCards_category\">";
+            for ($i=0; $i < count($cards); $i+=7) 
+            {
+              if (substr($cards[$i],0,1) == 'p' && $cards[$i+3] != 'T' && $cards[$i+5] == $category) //Checking to see that it's in the right category
+              { 
+                  echo "<li><a style=\"text-decoration:none;\" href=\"display_tcg.php?id=" . $cards[$i+1] . "\"><p style =\"text-align:center;\">" . $cards[$i+2] . "</p><img class=\"tcgCards\" src=\"images/cards/" . $cards[$i] ." \" style=\"width:200px; height:250px;\"></li>";
+              }
+            }
+            echo "</ul>";
+            }
+        }     //Card Type
+        else if ($filter == "CardType") //Show all the card types essentially, order by rarity name 
+        {
+            //Making the array only have unique values without the duplicate sub-category name
+            $categories_CardType = array_unique($categories_CardType);
+
+            foreach($categories_CardType as $category) {
+            echo "<h2>$category</h2>"; //Displaying yugioh set names
+            echo "<ul class=\"tcgCards_category\">";
+            for ($i=0; $i < count($cards); $i+=7) 
+            {
+              if (substr($cards[$i],0,1) == 'p' && $cards[$i+3] != 'T' && $cards[$i+6] == $category) 
+              { //Checking to see that it's in the right category
+                  echo "<li><a style=\"text-decoration:none;\" href=\"display_tcg.php?id=" . $cards[$i+1] . "\"><p style =\"text-align:center;\">" . $cards[$i+2] . "</p><img class=\"tcgCards\" src=\"images/cards/" . $cards[$i] ." \" style=\"width:200px; height:250px;\"></li>";
+              }
+            }
+            echo "</ul>";
+            }
+        }     
+            
+?>
+</section>
 </body>
 </html>

@@ -44,20 +44,18 @@
                       <td>Card_Name</td>
                       <td>Category</td>
                       <td>Set_Name</td>
-                      <td>Card_Type</td>
                       <td>Rarity</td>
                       <td>Price</td>
-                      <td>Seller_ID</td>
                       <td colspan=\"2\"></td>
                       </tr>";
               // populate table rows with data from database
               while ($row = mysqli_fetch_array($result)) {
                   echo "<tr>";
                   echo "<td>" . "<img src=\"Images/Cards/" . $row['Picture'] . "\" width=\"100\">" . "</td>";
-                  echo "<td>" . $row['Name'] . "</td>";
-                  echo "<td>" . $row['Description'] . "</td>";
-                  echo "<td>" . $row['Quality'] . "/5</td>";
-                  echo "<td>" . $row['Year'] . "</td>";
+                  echo "<td>" . $row['Card_Name'] . "</td>";
+                  echo "<td>" . $row['Category'] . "</td>";
+                  echo "<td>" . $row['Set_Name'] . "/5</td>";
+                  echo "<td>" . $row['Rarity'] . "</td>";
                   echo "<td>R" . $row['Price'] . "</td>";
                   // echo "<td>" . "<a href=\"Display_tcg.php?id=" . $row['TCG_ID'] . "\"><input type=\"button\" value=\"D\"></a>" . "</td>";   //I want these to be a and d buttons
                   // echo "<td>" . "<a href=\"delete.php?id=" . $row['TGC_ID'] . "\"><input type=\"button\" value=\"A\"></a>" . "</td>";

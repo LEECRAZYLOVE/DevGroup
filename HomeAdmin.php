@@ -76,7 +76,7 @@
 
     $i = 0;
     while ($row = mysqli_fetch_array($result)) {
-      $answer = $row["Answer"];
+      $answer = $row['Answer'];
     }
     mysqli_close($conn);
     

@@ -35,7 +35,7 @@
               $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
                   or die("ERROR: unable to connect to database!");
               // issue query instructions
-              $query = "SELECT * FROM sell_request WHERE Admin_ID=mert9312";
+              $query = "SELECT * FROM sell_request WHERE Admin_ID = 'mert9312'";
               $result = mysqli_query($conn, $query) or die("ERROR: unable to execute query!");
               // start table
               echo "<table width=\"50%\" border=0>
@@ -51,7 +51,7 @@
               // populate table rows with data from database
               while ($row = mysqli_fetch_array($result)) {
                   echo "<tr>";
-                  echo "<td>" . "<img src=\"Images/Cards/" . $row['Picture'] . "\" width=\"100\">" . "</td>";
+                  echo "<td>" . "<img src=\"Images/Cards/" . $row['Image'] . "\" width=\"100\">" . "</td>";
                   echo "<td>" . $row['Card_Name'] . "</td>";
                   echo "<td>" . $row['Category'] . "</td>";
                   echo "<td>" . $row['Set_Name'] . "/5</td>";

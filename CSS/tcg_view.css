@@ -1,6 +1,6 @@
 body{
-    background-color: black;
-    color: whitesmoke;
+    background-color: whitesmoke;
+    color: black;
     margin-top:20px;
 }
 
@@ -30,10 +30,10 @@ body{
 } 
 
 .product-content {
-  border: 1px solid black;
+  border: 1px solid whitesmoke;
   margin-bottom: 20px;
   margin-top: 12px;
-  background: black
+  background: whitesmoke
 }
 
 .product-content .carousel-control.left {
@@ -41,7 +41,7 @@ body{
 }
 
 .product-content {
-  background-color: black;
+  background-color: whitesmoke;
   display: block;
   min-height: 238px;
   overflow: hidden;

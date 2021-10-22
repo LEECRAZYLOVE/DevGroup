@@ -17,7 +17,7 @@
     <!--Start of header_labels-->
     <div class = "global_nav">
     <ul class = "header_labels"> <!--Might have to change this class name when we get to CSS-->
-      <li> <a href="HomeGeneral.php"><img id="logo" src="images/logo.png" alt="Store logo" style="text-align:left; width:160px; height:100px;"> </li>
+      <!-- <li> <a href="HomeGeneral.php"><img id="logo" src="images/logo.png" alt="Store logo" style="text-align:left; width:160px; height:100px;"> </li> -->
     </ul>
     </div>
     <!--End header_labels--> 

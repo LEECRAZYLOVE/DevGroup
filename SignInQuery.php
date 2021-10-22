@@ -23,7 +23,7 @@ while($row = mysqli_fetch_array($result))
 mysqli_close($conn); 
 
 //redirecting to the home page once successful
-if ($password== $currentPassword && $type == "General") {
+if ($password== $currentPassword) {
     if ($type == "General") {
         header("Location:homegeneral.php?id=" . $currentuser);
     }

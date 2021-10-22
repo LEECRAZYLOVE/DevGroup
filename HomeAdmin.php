@@ -66,7 +66,7 @@
 
     if ($filter == "users"){
       $query = "SELECT COUNT(User_ID) as Answer FROM user";
-    } else if($filter == "products") {
+    } else if ($filter == "products") {
       $query = "SELECT COUNT(TCG_ID) as Answer FROM tcg";
     }
     
@@ -81,8 +81,9 @@
     
     //Display for every filter
     echo 
-    "<ul class = \"$filter_labels\">
+    "<ul class = filter_labels>
     <li><h1>Total is</h1></li>
+    <li><input  value=\"$filter\"></li>
     </ul>";
 ?>
 <!--Just a footer for profesionalism-->

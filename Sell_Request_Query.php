@@ -1,5 +1,7 @@
 <?php
 
+$currentuser = $_COOKIE['user'];
+
 //request id auto increments
 $setname = $_REQUEST['setname'];
 $cardname = $_REQUEST['card_name'];
@@ -46,6 +48,13 @@ $query =  "INSERT INTO sell_request (Admin_ID, Card_Name, Category, Age, Descrip
 VALUES ('$adminid', '$cardname', '$category', '$age', '$description', '$picture', '$price', '$sellerid', '$quality', '$setname')";
 
 $result = mysqli_query($connect, $query)
-                or die("<strong style = \"color : red; \"> Could not execute query! </strong>");  
+                or die("<strong style = \"color : red; \"> Could not execute query! </strong>");
+
+ //close connection to the database
+ mysqli_close($connect);
+ header("refresh:0; homegeneral.php?id=$currentuser");
+ echo '<script> 
+         alert("Sell request sent!");
+         </script>'; //Alerts the user redirects back to account page
 
 ?>

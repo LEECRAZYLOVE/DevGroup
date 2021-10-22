@@ -24,7 +24,7 @@
   </nav>
 </header>
 <!--End of the global navigation section-->
-
+<main>
 <!-- Cart start-->
 <div class="shopping-cart">
   <!-- Title -->
@@ -307,8 +307,6 @@ input:focus {
  </style>
 
 <!-- Cart end-->
-
-<main>
 
 </main>
 

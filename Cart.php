@@ -25,286 +25,184 @@
 </header>
 <!--End of the global navigation section-->
 <main>
-<!-- Cart start-->
-<div class="shopping-cart">
-  <!-- Title -->
-  <div class="title">
-    Cart
-  </div>
- 
-  <!-- Product #1 -->
-  <div class="item">
-    <div class="buttons">
-      <span class="delete-btn"></span>
-      <span class="like-btn"></span>
-    </div>
- 
-    <div class="image">
-      <img src="images\categories\cardfight\card1.jpg" alt="" />
-    </div>
- 
-    <div class="description">
-      <span>Common Projects</span>
-      <span>Bball High</span>
-      <span>White</span>
-    </div>
- 
- 
-    <div class="total-price">$549</div>
-  </div>
- 
-  <!-- Product #2 -->
-  <div class="item">
-    <div class="buttons">
-      <span class="delete-btn"></span>
-      <span class="like-btn"></span>
-    </div>
- 
-    <div class="image">
-      <img src="images\categories\pokeman\card1.jpg" alt=""/>
-    </div>
- 
-    <div class="description">
-      <span>Maison Margiela</span>
-      <span>Future Sneakers</span>
-      <span>White</span>
-    </div>
- 
- 
-    <div class="total-price">$870</div>
-  </div>
- 
-  <!-- Product #3 -->
-  <div class="item">
-    <div class="buttons">
-      <span class="delete-btn"></span>
-      <span class="like-btn"></span>
-    </div>
- 
-    <div class="image">
-      <img src="images\categories\magic\card1.jpg" alt="" />
-    </div>
- 
-    <div class="description">
-      <span>Our Legacy</span>
-      <span>Brushed Scarf</span>
-      <span>Brown</span>
-    </div>
- 
- 
-    <div class="total-price">$349</div>
-  </div>
+<div class="invoice-box">
+  <table cellpadding="0" cellspacing="0">
+    <tr class="top">
+      <td colspan="2">
+        <table>
+          <tr>
+            <td class="title">
+              <img src="images/wallet.png" style="width: 100%; max-width: 300px" />
+            </td>
 
-  <!-- Overall cart -->
-  <div class="item">
-    <div class="buttons">
-      <span class="delete-btn"></span>
-      <span class="like-btn"></span>
-    </div>
- 
-    <div class="image">
-      <img src="images\collection.jpg" alt="User Profile" style="width:50px; height:50px;"/>
-    </div>
- 
-    <div class="description">
-      <span>Payments</span>
-      <!-- <span>Future Sneakers</span>
-      <span>White</span> -->
-    </div>
- 
+            <td>              
+              <br >Created: 22 October 2021<br />
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
 
     
- 
-    <div class="total-price">$870</div>
-  </div>
+
+    <tr class="information">
+      <td colspan="2">
+        <table>
+          <tr>
+            <td>
+              Ultimate TCG, Inc.<br />
+              Piet Retief Straat<br />
+              Stellenbosch, WC 7100
+            </td>
+
+            <td>
+              Bank - First National Bank.<br />
+              Acc. Number - 623652052688<br />
+              Branch Code - 5400
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <?php
+
+require_once("config.php");
+
+$connect = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE)
+                or die("<strong style = \"color : red; \"> Could not connect to the database! </strong>");
+
+$query = "SELECT TCG_ID, Name, Price, Picture FROM tcg WHERE OrderStatus = 'Cart'";
+
+$result = mysqli_query($connect, $query)
+                or die("<strong style = \"color : red; \"> Could not execute query! </strong>");
+
+  // start table
+              echo "<table width=\"80%\" border=0>
+                      <tr bgcolor=\"#428bca\">
+                      <td>Picture</td>
+                      <td>Card Name</td>
+                      <td>Price</td>
+                      </tr>";
+              // populate table rows with data from database
+              while ($row = mysqli_fetch_array($result)) {
+                  echo "<tr>";
+                  echo "<td>" . "<img src=\"Images/Cards/" . $row['Picture'] . "\" width=\"100\">" . "</td>";
+                  echo "<td>" . $row['Card_Name'] . "</td>";
+                  echo "<td>R" . $row['Price'] . "</td>";
+                  echo "</tr>";
+              }
+              // end table
+              echo "</table>";
+
+            //   $pricequery = "SELECT Sum(Price) FROM tcg WHERE OrderStatus = 'Active'";
+
+            //   $priceresult = mysqli_query($connect, $pricequery)
+            //                   or die("<strong style = \"color : red; \"> Could not execute query! </strong>");
+             
+            //  while ($row = mysqli_fetch_array($priceresult)) {
+            //   echo "<h2>".$row['Price']."<h2>";}
+            echo "<a href=\"Orderstatus.php?id=" . $row['TCG_ID'] . "\"><input type=\"button\" value=\"Confirm Payment\"></a>";
+                              // close the connection to database
+
+mysqli_close($connect);
+
+
+?>
 
  <!-- CSS Start-->
-
  <style>
+  .invoice-box {
+    max-width: 800px;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    color: #555;
+  }
 
-* {
-  box-sizing: border-box;
-}
- 
-html,
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  background-color: #000000;
-  font-family: 'Roboto', sans-serif;
-}
-
-.shopping-cart {
-  width: 750px;
-  height: auto;
-  margin: 80px auto;
-  background: #FFFFFF;
-  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
-  border-radius: 6px;
- 
-  display: flex;
-  flex-direction: column;
-}
-
-.title {
-  height: 60px;
-  border-bottom: 1px solid #E1E8EE;
-  padding: 20px 30px;
-  color: #5E6977;
-  font-size: 18px;
-  font-weight: 400;
-}
- 
-.item {
-  padding: 20px 30px;
-  height: auto;
-  display: flex;
-}
- 
-.item:nth-child(3) {
-  border-top:  1px solid #E1E8EE;
-  border-bottom:  1px solid #E1E8EE;
-}
-
-.buttons {
-  position: relative;
-  padding-top: 30px;
-  margin-right: 60px;
-}
-.delete-btn,
-.like-btn {
-  display: inline-block;
-  Cursor: pointer;
-}
-.delete-btn {
-  width: 18px;
-  height: 17px;
-  /* background: img src="images/user-icon.png" no-repeat center; */
-}
- 
-.like-btn {
-  position: absolute;
-  top: 9px;
-  left: 15px;
-  background: url('twitter-heart.png');
-  width: 60px;
-  height: 60px;
-  background-size: 2900%;
-  background-repeat: no-repeat;
-}
-
-.overall-btn {
-  position: absolute;
-  top: 9px;
-  left: 15px;
-  background: url('images/order.png');
-  width: 60px;
-  height: 60px;
-  background-size: 2900%;
-  background-repeat: no-repeat;
-}
-
-
-.is-active {
-  animation-name: animate;
-  animation-duration: .8s;
-  animation-iteration-count: 1;
-  animation-timing-function: steps(28);
-  animation-fill-mode: forwards;
-}
- 
-@keyframes animate {
-  0%   { background-position: left;  }
-  50%  { background-position: right; }
-  100% { background-position: right; }
-}
-
-.image {
-  margin-right: 50px;
-}
- 
-/*Let’s add some basic style to  product name and description.*/
-
-.description {
-  padding-top: 10px;
-  margin-right: 60px;
-  width: 115px;
-}
- 
-.description span {
-  display: block;
-  font-size: 14px;
-  color: #43484D;
-  font-weight: 400;
-}
- 
-.description span:first-child {
-  margin-bottom: 5px;
-}
-.description span:last-child {
-  font-weight: 300;
-  margin-top: 8px;
-  color: #86939E;
-}
-
-
-button[class*=btn] {
-  width: 30px;
-  height: 30px;
-  background-color: #E1E8EE;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-}
-.minus-btn img {
-  margin-bottom: 3px;
-}
-.plus-btn img {
-  margin-top: 2px;
-}
- 
-button:focus,
-input:focus {
-  outline:0;
-}
-
-.total-price {
-  width: 83px;
-  padding-top: 27px;
-  text-align: center;
-  font-size: 16px;
-  color: #43484D;
-  font-weight: 300;
-}
-
-@media (max-width: 800px) {
-  .shopping-cart {
+  .invoice-box table {
     width: 100%;
-    height: auto;
-    overflow: hidden;
+    line-height: inherit;
+    text-align: left;
   }
-  .item {
-    height: auto;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .image img {
-    width: 50%;
-  }
-  .image,
-  .quantity,
-  .description {
-    width: 100%;
-    text-align: center;
-    margin: 6px 0;
-  }
-  .buttons {
-    margin-right: 20px;
-  }
-}
 
- </style>
+  .invoice-box table td {
+    padding: 5px;
+    vertical-align: top;
+  }
+
+  .invoice-box table tr td:nth-child(2) {
+    text-align: right;
+  }
+
+  .invoice-box table tr.top table td {
+    padding-bottom: 20px;
+  }
+
+  .invoice-box table tr.top table td.title {
+    font-size: 45px;
+    line-height: 45px;
+    color: #333;
+  }
+
+  .invoice-box table tr.information table td {
+    padding-bottom: 40px;
+  }
+
+  .invoice-box table tr.heading td {
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+  }
+
+  .invoice-box table tr.details td {
+    padding-bottom: 20px;
+  }
+
+  .invoice-box table tr.item td {
+    border-bottom: 1px solid #eee;
+  }
+
+  .invoice-box table tr.item.last td {
+    border-bottom: none;
+  }
+
+  .invoice-box table tr.total td:nth-child(2) {
+    border-top: 2px solid #eee;
+    font-weight: bold;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .invoice-box table tr.top table td {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+
+    .invoice-box table tr.information table td {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+  }
+
+  /** RTL **/
+  .invoice-box.rtl {
+    direction: rtl;
+    font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+  }
+
+  .invoice-box.rtl table {
+    text-align: right;
+  }
+
+  .invoice-box.rtl table tr td:nth-child(2) {
+    text-align: left;
+  }
+</style>
 
 <!-- Cart end-->
 

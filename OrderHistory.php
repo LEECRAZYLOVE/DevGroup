@@ -37,26 +37,28 @@
             or die("could not connect to database");
         
         //issue query instructions
-        $query = "SELECT * FROM tcg_order";
+        $query = "SELECT * FROM tcg WHERE Seller_ID = $currentuser" ;
         $result = mysqli_query($conn, $query) or die("could not retrieve data!");
 
         //Table headings
-            echo "<table width=\"80%\" border=0>
-                <tr style=\"background-color: #428bca;\">
-                    <td>Order ID</td>
-                    <td>Status</td>
-                    <td>Total Price</td>
+                echo "<table width=\"80%\" border=0>
+                <tr bgcolor=\"#428bca\">
+                <td>Picture</td>
+                <td>Card Name</td>
+                <td>Price</td>
+                <td>Seller Name</td>
+                <td></td>
                 </tr>";
         //table content
-            while ($row = mysqli_fetch_array($result))
-             {
-                echo "<tr>";
-                echo "<td>".$row['Order_ID']."</td>";
-                echo "<td>".$row['Status']."</td>";              
-                echo "<td>".$row['TotalPrice']."</td>";
-                echo "</tr>";
-          
-            }
+        while ($row = mysqli_fetch_array($result)) {
+            echo "<tr>";
+            echo "<td>" . "<img src=\"Images/Cards/" . $row['Picture'] . "\" width=\"100\">" . "</td>";
+            echo "<td>" . $row['Card_Name'] . "</td>";
+            echo "<td>R" . $row['Price'] . "</td>";
+            echo "<td>" . $row['Seller_Name'] . "</td>";
+            echo "<td>" . "<a href=\"PaidQuery.php?id=" . $row['TCG_ID'] . "\"><input type=\"button\" value=\"PAID\"></a>" . "</td>";
+            echo "</tr>";
+        }
 
         echo "</table>";
         //close connection
